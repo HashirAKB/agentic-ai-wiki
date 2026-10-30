@@ -7,6 +7,7 @@ Format: `### [date] Title` then the practice, the source, and the suggested word
 ## Already adopted (2026-10-30)
 - Karpathy working rules saved as preferences (assumptions up front, push back, simplicity, surgical edits, goal-driven execution, spec first, visual explanations, file answers worth keeping).
 - Skills: agentic-engineering, llm-wiki.
+- 2026-10-30: Claude Code `permissions.blockWritesOutsideWorkingDirectories` turned on in user settings (from radar 2026-10-30).
 
 ## Pending
 (none yet)
