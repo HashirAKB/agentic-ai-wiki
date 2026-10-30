@@ -12,3 +12,4 @@ Append-only. Newest at the bottom.
 ## [2026-10-30] applied | Saved Karpathy-derived working rules to Claude's preferences; proposed agentic-engineering and llm-wiki skills
 ## [2026-10-30] setup | Moved wiki from Google Drive to this GitHub repo; Drive folder is now an archive
 ## [2026-10-30] ingest | Simon Willison (red/green TDD, first run the tests, lethal trifecta) and Anthropic (Building effective agents, Writing tools for agents)
+## [2026-10-30] radar | 9 items, top: permissions.blockWritesOutsideWorkingDirectories, claude-plugins-official, Claude Code team code review

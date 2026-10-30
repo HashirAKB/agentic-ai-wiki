@@ -18,5 +18,9 @@ Read this first. One line per page. Updated on every ingest.
 ## Concepts
 - [Core concepts](wiki/concepts/core-concepts.md) - agentic engineering, context engineering, verification loops, verifiability, partial autonomy, compounding engineering, evals, agent-native surfaces, lethal trifecta, workflows vs agents, tool design
 
+## Tools radar
+- [Seen tools](radar/seen.md) - everything suggested so far
+- [Latest radar: 2026-10-30](radar/2026-10-30.md) - weekly scan of new Claude tools, plugins, skills, MCP
+
 ## Personal pages
 Kept private in Google Drive (folder "Agentic AI Wiki", docs prefixed `H - `), not in this public repo.
