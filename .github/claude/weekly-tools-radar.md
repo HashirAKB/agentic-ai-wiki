@@ -8,10 +8,10 @@ Run `date`. Read `radar/seen.md` (create it if missing, with a header row `| Nam
 ## 2. Scan (last ~14 days first)
 Primary sources first:
 - Anthropic: https://www.anthropic.com/news and https://www.anthropic.com/engineering
-- Claude release notes: https://docs.claude.com/en/release-notes/overview and the Claude Help Center release notes (search "Claude release notes")
+- Claude release notes: https://docs.claude.com/en/release-notes/overview and the Claude Help Center release notes (find the current URL with WebSearch "Claude release notes site:support.claude.com")
 - Claude Code changelog: https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
 - Anthropic's official skills, plugins and connector repositories on GitHub (search github.com/anthropics for skills, plugins, MCP)
-- MCP: the official registry (https://registry.modelcontextprotocol.io) and https://github.com/modelcontextprotocol/servers
+- MCP: the official registry. Its website is JavaScript-rendered, so use the API instead: https://registry.modelcontextprotocol.io/v0/servers (JSON; add `?limit=100` and follow the cursor if needed). Also https://github.com/modelcontextprotocol/servers (read its README). Aim for at least two MCP server items per run when credible ones exist.
 - Practitioners already in this wiki (see `index.md`), especially https://simonwillison.net
 Then use WebSearch for "new MCP server", "Claude Code plugin", "Claude skill", "Claude connector" and similar from the last two weeks to catch what people are actually using. Treat X/Twitter, Reddit and YouTube as leads only: confirm each item at its own repo, docs or announcement before including it.
 
