@@ -5,7 +5,7 @@ One short guide per tool or setting adopted from the [tools radar](../radar/seen
 ## Status
 
 Statuses: `queued` (not installed yet), `learning` (installed, doing the first exercise), `using` (part of normal work), `removed`.
-A tool that stays at `learning` for two weeks is suggested for removal in the Sunday digest.
+There is no limit on how many tools are queued or learning at once. The Sunday digest asks about tools that have sat at `learning` for two weeks, so unused ones can be dropped.
 
 | Tool | Playbook | Status | Since |
 |---|---|---|---|

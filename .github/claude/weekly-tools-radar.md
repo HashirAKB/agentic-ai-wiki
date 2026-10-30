@@ -18,7 +18,8 @@ Then use WebSearch for "new MCP server", "Claude Code plugin", "Claude skill", "
 ## 3. Filter
 Include an item only if it is real (has a repo, docs or an official page), maintained, and plausibly useful for coding with agents, building agents, research, job search, productivity, or Android/Kotlin development. Skip hype, paid-course funnels, abandoned repos and near-duplicates. Prefer Anthropic-official and well-known maintainers.
 
-## 4. Write `radar/YYYY-MM-DD.md` (today's date), at most 10 items
+## 4. Write `radar/YYYY-MM-DD.md` (today's date)
+Include every item that passes the filter; there is no cap. Rank items by how useful they are.
 For each item:
 - **Name** (link) — category: Anthropic feature | Connector | Plugin | Skill | MCP server | CLI/tool | Workflow tip — from: who publishes it
 - **What it does:** one or two lines.
@@ -28,7 +29,7 @@ For each item:
 - **First exercise:** one hands-on task of about 15 minutes on a typical small project that teaches the core use, plus how you know it worked.
 - **Verdict:** Try now | Watch | Skip-for-now.
 
-Put at most two "Try now" items first under a "Top picks" heading; learning beats volume, so be strict. End with a "Sources checked" list.
+Put all "Try now" items first under a "Top picks" heading, best first. The reader decides how many to take on. End with a "Sources checked" list.
 
 ## 5. Bookkeeping
 Append one row per item to `radar/seen.md`. Make sure `index.md` has a "Tools radar" section linking `radar/seen.md` and the newest radar file (update the link). Append to `log.md`: `## [YYYY-MM-DD] radar | <n> items, top: <names>`.
