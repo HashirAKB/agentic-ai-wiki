@@ -31,4 +31,18 @@ jobs:
           prompt: "Read .github/claude/weekly-tools-radar.md and follow it exactly."
           claude_args: >-
             --max-turns 80
-            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(git status:*),Bash(git diff:*),Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git pull:*),Bash(date:*),Bash(mkdir:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,WebSearch,WebFetch,Bash(git:*),Bash(ls:*),Bash(cat:*),Bash(head:*),Bash(tail:*),Bash(wc:*),Bash(date:*),Bash(mkdir:*)"
+
+      - name: Commit and push anything left uncommitted
+        if: always()
+        run: |
+          git status --short
+          git add -A -- . ':!.github'
+          if git diff --cached --quiet; then
+            echo "Nothing left to commit."
+          else
+            git commit -m "radar: $(date -u +%F) (auto-commit)"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          git log --oneline -3
