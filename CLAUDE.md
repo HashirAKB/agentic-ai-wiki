@@ -13,6 +13,8 @@ A persistent, compounding knowledge base on (1) how to get the most out of AI ag
 - `proposals.md`: suggested changes to how Claude works with Hashir (preferences, skills), waiting for his approval.
 - `wiki/people/<name>.md`: one per practitioner. Who they are, why credible, key practices, links, still-to-ingest.
 - `wiki/concepts/<concept>.md`: cross-cutting ideas.
+- `radar/`: weekly tools radar and the list of everything suggested (`seen.md`).
+- `playbooks/`: one how-to-use guide per adopted tool, plus `playbooks/README.md` with each tool's status (queued, learning, using, removed).
 - Personal pages (how the knowledge applies to Hashir: career positioning, portfolio, his projects) do NOT live in this repo. They are Google Docs prefixed `H - ` in the private Drive folder "Agentic AI Wiki".
 
 Link pages with relative markdown links, e.g. `[Karpathy](../people/andrej-karpathy.md)`.

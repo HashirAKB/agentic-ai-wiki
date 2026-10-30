@@ -3,7 +3,7 @@
 Find new or newly useful tools for an individual developer doing AI-assisted and agentic work with Claude: Anthropic features, Claude connectors, Claude Code plugins and skills, MCP servers, CLIs, and concrete workflow tips. The reader has no time to follow X, Substack, YouTube or forums, so this run does it for them.
 
 ## 1. Know what was already suggested
-Run `date`. Read `radar/seen.md` (create it if missing, with a header row `| Name | URL | First suggested | Verdict |`). Do not suggest anything already listed there unless it has had a major update since; then mark it "Update".
+Run `date`. Read `radar/seen.md` (create it if missing, with a header row `| Name | URL | First suggested | Verdict |`). Also read `playbooks/README.md`: never re-suggest a tool listed there. Do not suggest anything already listed in `radar/seen.md` unless it has had a major update since; then mark it "Update".
 
 ## 2. Scan (last ~14 days first)
 Primary sources first:
@@ -25,9 +25,10 @@ For each item:
 - **Why it's useful:** the concrete job it does better.
 - **How to try:** the one or two real steps (install command, where to enable it).
 - **Risks:** permissions it needs, data it can reach, and whether it can create a lethal trifecta (private data + untrusted content + a way to send data out). Note if it is unofficial or young.
+- **First exercise:** one hands-on task of about 15 minutes on a typical small project that teaches the core use, plus how you know it worked.
 - **Verdict:** Try now | Watch | Skip-for-now.
 
-Put the three best "Try now" items first under a "Top picks" heading. End with a "Sources checked" list.
+Put at most two "Try now" items first under a "Top picks" heading; learning beats volume, so be strict. End with a "Sources checked" list.
 
 ## 5. Bookkeeping
 Append one row per item to `radar/seen.md`. Make sure `index.md` has a "Tools radar" section linking `radar/seen.md` and the newest radar file (update the link). Append to `log.md`: `## [YYYY-MM-DD] radar | <n> items, top: <names>`.

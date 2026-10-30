@@ -14,3 +14,4 @@ Append-only. Newest at the bottom.
 ## [2026-10-30] ingest | Simon Willison (red/green TDD, first run the tests, lethal trifecta) and Anthropic (Building effective agents, Writing tools for agents)
 ## [2026-10-30] radar | 9 items, top: permissions.blockWritesOutsideWorkingDirectories, claude-plugins-official, Claude Code team code review
 ## [2026-10-30] applied | Radar pick adopted: Claude Code blockWritesOutsideWorkingDirectories
+## [2026-10-30] setup | Added playbooks/ (how-to guides and adoption status for 5 tools); radar now limits top picks to 2 and adds a first exercise per item

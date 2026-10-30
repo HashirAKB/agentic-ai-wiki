@@ -22,5 +22,8 @@ Read this first. One line per page. Updated on every ingest.
 - [Seen tools](radar/seen.md) - everything suggested so far
 - [Latest radar: 2026-10-30](radar/2026-10-30.md) - weekly scan of new Claude tools, plugins, skills, MCP
 
+## Playbooks
+- [Playbooks and adoption status](playbooks/README.md) - how to use each adopted tool, with a first exercise
+
 ## Personal pages
 Kept private in Google Drive (folder "Agentic AI Wiki", docs prefixed `H - `), not in this public repo.
