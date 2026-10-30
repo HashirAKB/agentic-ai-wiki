@@ -5,4 +5,4 @@ A public, LLM-maintained knowledge base, built on [Andrej Karpathy's LLM Wiki pa
 - Best practices from credible AI practitioners on working with agents and LLMs
 - Kept current by Claude on a daily scheduled run (learning in public)
 
-Start at [index.md](index.md). Conventions are in [CLAUDE.md](CLAUDE.md). Claude updates this repo on a daily scheduled run; see [log.md](log.md) for history and [proposals.md](proposals.md) for suggested changes awaiting approval.
+Start at [index.md](index.md). Conventions are in [CLAUDE.md](CLAUDE.md). Claude Code updates this repo every morning through a GitHub Action ([workflow](.github/workflows/daily-research.yml), [instructions](.github/claude/daily-research.md)); see [log.md](log.md) for history and [proposals.md](proposals.md) for suggested changes awaiting approval.
