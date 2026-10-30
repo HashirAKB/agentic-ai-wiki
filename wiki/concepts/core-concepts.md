@@ -9,7 +9,7 @@ Vibe coding: build by describing, without caring about the code (fine for protot
 Curating everything in the context window (instructions, tools, memory, retrieved data, history) with the minimum high-signal tokens for the next step. Techniques: right-altitude prompts, compaction, external notes, sub-agents for isolated context. Sources: [Karpathy](../people/andrej-karpathy.md), [Anthropic](../people/anthropic-engineering.md).
 
 ## Verification loops and declarative goals
-Agents are strongest when they can check their own work. Give success criteria rather than steps; tests first (red/green TDD); run existing tests first; browser or app-level verification; naive correct version, then optimize. Sources: [Karpathy](../people/andrej-karpathy.md), [Simon Willison](../people/simon-willison.md), [Boris Cherny](../people/boris-cherny.md).
+Agents are strongest when they can check their own work. Give success criteria rather than steps; tests first (red/green TDD); run existing tests first; browser or app-level verification; naive correct version, then optimize. The short prompts "Use red/green TDD" and "First run the tests" each carry a whole workflow. Sources: [Karpathy](../people/andrej-karpathy.md), [Simon Willison](../people/simon-willison.md), [Boris Cherny](../people/boris-cherny.md).
 
 ## Verifiability and jagged intelligence
 LLMs advance fastest where outcomes are automatically checkable and labs invest training effort. Expect brilliance and basic failures side by side; test empirically whether your task is on the model's rails. Source: [Karpathy](../people/andrej-karpathy.md).
@@ -27,4 +27,7 @@ Look at real outputs first, categorize failures, fix the most common, then build
 Build for the agent as user: markdown docs, CLIs, APIs, MCP servers, copy-pasteable agent instructions. Source: [Karpathy](../people/andrej-karpathy.md).
 
 ## Agent security: lethal trifecta
-Private data + untrusted content + ability to send data out = prompt-injection exfiltration risk. Remove at least one leg. Source: [Simon Willison](../people/simon-willison.md) (to verify against his primary post).
+Private data + untrusted content + ability to send data out = prompt-injection exfiltration risk. Remove at least one leg. Cause: models cannot reliably tell operator instructions from instructions inside content. Prompt wording and guardrail products are not dependable; constrain actions after untrusted input. Source: [Simon Willison](../people/simon-willison.md).
+
+## Workflows vs agents, and tool design
+Start with the simplest pattern (single call, chain, routing, parallelization, orchestrator-workers, evaluator-optimizer) and move to autonomous agents only when it measurably helps. Tools are an interface for the model: few, well-scoped, namespaced, token-efficient, with actionable errors, and refined through evals on transcripts. Source: [Anthropic](../people/anthropic-engineering.md).

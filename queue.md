@@ -3,8 +3,8 @@
 Research one or two items per daily run, top of the list first. Mark DONE with the date; leave a note on partially done items. Add newly found credible sources at the right priority.
 
 ## Priority 1: deepen existing people (primary sources)
-1. TODO - Simon Willison: guide chapters in full (red/green TDD, first run the tests, subagents, anti-patterns, agentic manual testing) and his lethal trifecta post
-2. TODO - Anthropic Engineering: Building effective agents; Writing tools for agents; Effective harnesses for long-running agents; Demystifying evals for AI agents; multi-agent research system
+1. PARTIAL (2026-10-30; red/green TDD, first-run-tests, trifecta done) - Simon Willison: guide chapters in full (red/green TDD, first run the tests, subagents, anti-patterns, agentic manual testing) and his lethal trifecta post
+2. PARTIAL (2026-10-30; Building effective agents, Writing tools done) - Anthropic Engineering: Effective harnesses for long-running agents; Demystifying evals for AI agents; multi-agent research system
 3. TODO - Boris Cherny: original X threads (Jan 2026) and Claude Code best-practices docs
 4. TODO - Karpathy: Dwarkesh podcast 2025; How I use LLMs video; Animals vs Ghosts; Vibe coding MenuGen; nanochat/microGPT
 5. TODO - Hamel Husain: "Your AI product needs evals", LLM-as-judge guide, field guide to improving AI products

@@ -2,7 +2,7 @@
 
 **Who:** Co-creator of Django, creator of Datasette and the `llm` CLI, prolific independent blogger on practical LLM use (simonwillison.net). Coined "prompt injection" and the "lethal trifecta" for agent security.
 **Why credible:** Builds and publishes daily, documents his real prompts and failures, discloses sponsorships.
-**Ingested:** 2026-10-30 (guide table of contents; chapters still to read in full)
+**Ingested:** 2026-10-30 (guide contents); 2026-10-30 (red/green TDD, first-run-the-tests, lethal trifecta read from primary pages)
 **Related:** [Core concepts](../concepts/core-concepts.md), [Karpathy](andrej-karpathy.md)
 
 ## Agentic Engineering Patterns (guide, started Feb 2026)
@@ -22,15 +22,24 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 - His three daily patterns: red/green TDD, templates, and hoarding.
 - Sees November 2025 as the inflection point; discusses the "dark factory" idea where AI does its own QA.
 
-## Security (to verify against primary post)
-- Lethal trifecta: an agent with private data + exposure to untrusted content + ability to communicate externally can be exploited via prompt injection. Important for any agent Hashir builds.
+## Chapter notes (primary pages)
+- **Red/green TDD:** write tests first, run them and confirm they fail, then implement until green. Skipping the red step risks a test that already passes and proves nothing. The prompt suffix "Use red/green TDD" is enough, because current models treat it as shorthand for the whole workflow. It guards against agent code that is broken or never used.
+- **First run the tests:** open a session on an existing project with "First run the tests" (or the exact test command). Three effects: the agent discovers and keeps rerunning the suite; the test count hints at project size; and it sets a testing mindset so the agent adds tests for its own changes. Tests used to be costly to write and maintain; agents make that cost small, so the old excuses are gone.
+
+## Security: the lethal trifecta (primary post, Jun 2025)
+- Three capabilities that are dangerous together: access to private data, exposure to untrusted content, and a way to send data out. With all three, an attacker can instruct the agent to leak the data.
+- Root cause: LLMs cannot reliably separate operator instructions from instructions embedded in content they read.
+- Mitigations: avoid combining the three (the only dependable protection for users); after an agent ingests untrusted input, constrain it so that input cannot trigger consequential actions; architectural approaches such as Google DeepMind's CaMeL. He argues that guardrail products with a "95%" catch rate are not good enough, and that mixing MCP tools makes accidental trifectas easy.
 
 ## Links
 - https://simonwillison.net/guides/agentic-engineering-patterns/
 - https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/
+- https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/
+- https://simonwillison.net/guides/agentic-engineering-patterns/first-run-the-tests/
+- https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
 - https://lennysnewsletter.com/p/an-ai-state-of-the-union
 
 ## Still to ingest
-- Each guide chapter in full (start with red/green TDD, first run the tests, subagents)
-- Lethal trifecta posts
+- Remaining guide chapters (subagents, anti-patterns, agentic manual testing, linear walkthroughs)
+- Follow-up trifecta posts (CaMeL, design patterns paper)
 - His yearly LLM review posts
