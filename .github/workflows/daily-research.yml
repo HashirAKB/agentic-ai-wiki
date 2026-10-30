@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: daily-research
+  group: wiki-writes
   cancel-in-progress: false
 
 jobs:
