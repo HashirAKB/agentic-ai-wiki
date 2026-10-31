@@ -31,3 +31,9 @@ Private data + untrusted content + ability to send data out = prompt-injection e
 
 ## Workflows vs agents, and tool design
 Start with the simplest pattern (single call, chain, routing, parallelization, orchestrator-workers, evaluator-optimizer) and move to autonomous agents only when it measurably helps. Tools are an interface for the model: few, well-scoped, namespaced, token-efficient, with actionable errors, and refined through evals on transcripts. Source: [Anthropic](../people/anthropic-engineering.md).
+
+## Deterministic vs non-deterministic instructions
+Prompts, CLAUDE.md and skills are advice the model can decide not to follow; hooks, deny rules, sandboxing, tests and CI are enforced. Use advice for guidelines with exceptions, enforcement for rules with none, and keep CLAUDE.md to what the model cannot learn from the repo. Source: [Boris Cherny / Claude Code docs](../people/boris-cherny.md).
+
+## Open questions
+- Agents on novel code: [Karpathy's Oct 2025 interview](../people/andrej-karpathy.md) found coding agents net unhelpful on nanochat, while his 2026 posts treat agentic engineering as the main mode. Probably model progress plus the verifiability point, but not confirmed in his own words.

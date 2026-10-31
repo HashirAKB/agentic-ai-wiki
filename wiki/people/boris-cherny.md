@@ -17,9 +17,21 @@
 - **Give Claude a way to verify its work** (tests, browser, running the app). This closes the loop and raises quality.
 - **Learning mode:** use explanatory output styles, or ask for an HTML presentation to understand unfamiliar code.
 
+## Claude Code best-practices docs (team guidance, 2026-10-31)
+Source: [Best practices for Claude Code](https://code.claude.com/docs/en/best-practices). Written by the Claude Code team, not Boris personally; it matches his practices above and adds detail.
+- **Deterministic vs non-deterministic instructions:** prompts, CLAUDE.md and skills are advice the model may skip; hooks, deny rules and managed settings are enforced by the harness. If a CLAUDE.md line keeps being missed even with emphasis, make it a hook. If a hook only encodes a preference, delete it.
+- **Only write what Claude can't see:** for each CLAUDE.md line ask: could it find this by reading the code, and would it actually look? If yes to both, drop it. Keep exact test/typecheck/lint commands, misleading code areas, decisions not in the repo, and anything corrected twice. Stay under about 200 lines; scope rules to paths with `.claude/rules/`.
+- **Give Claude a pass/fail check** and ask for evidence (command and output), not a bare "all tests pass". Options from soft to hard: a prompt to loop until green, a `/goal` condition judged by a separate model, a Stop hook that blocks finishing until typecheck passes, review by a fresh subagent that never saw the conversation.
+- **Interview first:** for vague features, ask Claude to interview you and write a SPEC.md, then build in a fresh session. Review against the spec and say to skip style, because a reviewer asked to find problems always finds something.
+- **Be specific:** name the file, the symptom and what "fixed" looks like. Saying "be ambitious" helps when you want edge cases and follow-ons, since Claude reads requests conservatively.
+- **Skills over CLAUDE.md for procedures:** only name and description load each session; mark side-effect workflows (e.g. release) as manual-only.
+- **Trim MCP servers:** connected servers add tool descriptions to context even when unused; prefer a CLI (e.g. `gh`) when one exists.
+
 ## Links
+- https://code.claude.com/docs/en/best-practices
 - https://x.com/bcherny/status/2017742741636321619
 - https://threadreaderapp.com/thread/2007179832300581177.html
 
 ## Still to ingest
-- Original threads in full; his talk on mastering Claude Code
+- Original X threads in full (X blocks fetching; use thread mirrors); his talk on mastering Claude Code
+- Docs pages on hooks, subagents, skills, `/goal`

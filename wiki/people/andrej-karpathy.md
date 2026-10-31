@@ -43,7 +43,16 @@
 - You can outsource thinking but not understanding; the human still directs.
 - Learning path: Zero to Hero (micrograd to GPT), Deep Dive into LLMs, How I use LLMs, microGPT.
 
+## Dwarkesh Patel interview, Oct 2025 (2026-10-31)
+Source: [Dwarkesh transcript](https://www.dwarkesh.com/p/andrej-karpathy) (first ~100k characters read; the rest unread).
+- **"Decade of agents", not year:** agents lack intelligence, multimodality, reliable computer use and continual learning. The problems are tractable but hard, so he expects gradual progress along the autonomy slider, not a jump.
+- **Three modes of coding:** by hand, autocomplete while you stay architect, and agents. He mostly used autocomplete, because pointing at a code location and typing a few characters conveys more than a paragraph of English.
+- **Why agents failed on nanochat:** they defaulted to common internet conventions (pushing PyTorch's DDP wrapper he had deliberately replaced), over-defended with try/except, used deprecated APIs and bloated the code. Weak on novel code; good on boilerplate and well-represented patterns.
+- **When agents did help:** work with a reference implementation and tests to check against (e.g. a Rust tokenizer against a Python reference). Fits the verification-loop theme.
+- **Learning:** build it from scratch rather than copy-pasting; building exposes gaps that reading hides. Code first, explain after.
+
 ## Links
+- https://www.dwarkesh.com/p/andrej-karpathy
 - https://x.com/karpathy/status/2015883857489522876
 - https://karpathy.bearblog.dev/sequoia-ascent-2026/
 - https://karpathy.bearblog.dev/verifiability/
@@ -55,7 +64,7 @@
 - https://karpathy.ai
 
 ## Still to ingest
-- Dwarkesh podcast 2025 (current limits of agents)
+- Dwarkesh podcast: remaining ~70k characters (RL, cognitive core, education)
 - How I use LLMs video (full)
 - Animals vs Ghosts, The space of minds, Power to the people, Vibe coding MenuGen
 - nanochat / microGPT repos
