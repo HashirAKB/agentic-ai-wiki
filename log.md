@@ -17,3 +17,4 @@ Append-only. Newest at the bottom.
 ## [2026-10-30] setup | Added playbooks/ (how-to guides and adoption status for 5 tools); radar now limits top picks to 2 and adds a first exercise per item
 ## [2026-10-30] setup | Removed the 2-picks cap: radar lists every item that passes the filter, ranked; Hashir chooses how many to take on and tracks them in playbooks/README.md
 ## [2026-10-31] ingest | Boris Cherny / Claude Code best-practices docs; Karpathy Dwarkesh interview (partial)
+## [2026-10-31] radar | 11 items, top: SDK majors + /claude-api api-version, MCP Inspector
