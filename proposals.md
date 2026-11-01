@@ -16,3 +16,7 @@ Suggested wording: "When a rule keeps being missed, propose a hook or deny rule 
 
 ### [2026-10-31] Interview-to-spec for vague tasks
 Practice: for under-specified features, interview me with multiple-choice questions, write SPEC.md, then build in a fresh session and review against the spec (skip style). Source: same page.
+
+### [2026-11-01] Long tasks: feature list, progress file, end-to-end check
+Practice: for multi-session builds, write a JSON feature list (all failing, only the pass flag editable), a progress log and an init script; work one feature per session, start by running the app, end with a commit. Source: [Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents).
+Suggested wording: "For work spanning sessions, keep a feature list and progress file in the repo; never mark a feature done without running it end to end."

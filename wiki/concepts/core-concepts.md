@@ -11,6 +11,9 @@ Curating everything in the context window (instructions, tools, memory, retrieve
 ## Verification loops and declarative goals
 Agents are strongest when they can check their own work. Give success criteria rather than steps; tests first (red/green TDD); run existing tests first; browser or app-level verification; naive correct version, then optimize. The short prompts "Use red/green TDD" and "First run the tests" each carry a whole workflow. Sources: [Karpathy](../people/andrej-karpathy.md), [Simon Willison](../people/simon-willison.md), [Boris Cherny](../people/boris-cherny.md).
 
+## Long-running agents: durable state between sessions
+When work spans many context windows, put state in files and git, not memory: a feature list with pass/fail flags the agent may only flip, a progress log, an init script, one feature per session, a startup check that the app still works, and a commit at the end. Verify end to end like a user (real browser), not just unit tests or curl. Sources: [Anthropic](../people/anthropic-engineering.md), [Simon Willison](../people/simon-willison.md) (manual testing: run the code, record real output, turn bugs into tests).
+
 ## Verifiability and jagged intelligence
 LLMs advance fastest where outcomes are automatically checkable and labs invest training effort. Expect brilliance and basic failures side by side; test empirically whether your task is on the model's rails. Source: [Karpathy](../people/andrej-karpathy.md).
 

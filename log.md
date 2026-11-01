@@ -18,3 +18,5 @@ Append-only. Newest at the bottom.
 ## [2026-10-30] setup | Removed the 2-picks cap: radar lists every item that passes the filter, ranked; Hashir chooses how many to take on and tracks them in playbooks/README.md
 ## [2026-10-31] ingest | Boris Cherny / Claude Code best-practices docs; Karpathy Dwarkesh interview (partial)
 ## [2026-10-31] radar | 11 items, top: SDK majors + /claude-api api-version, MCP Inspector
+## [2026-11-01] ingest | Anthropic: Effective harnesses for long-running agents; Simon Willison: agentic manual testing
+## [2026-11-01] lint | Weekly pass: relative links checked, no orphans or contradictions found

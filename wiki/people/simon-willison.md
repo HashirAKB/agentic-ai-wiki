@@ -26,6 +26,8 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 - **Red/green TDD:** write tests first, run them and confirm they fail, then implement until green. Skipping the red step risks a test that already passes and proves nothing. The prompt suffix "Use red/green TDD" is enough, because current models treat it as shorthand for the whole workflow. It guards against agent code that is broken or never used.
 - **First run the tests:** open a session on an existing project with "First run the tests" (or the exact test command). Three effects: the agent discovers and keeps rerunning the suite; the test count hints at project size; and it sets a testing mindset so the agent adds tests for its own changes. Tests used to be costly to write and maintain; agents make that cost small, so the old excuses are gone.
 
+- **Agentic manual testing:** passing automated tests does not prove the software works; have the agent actually run it (`python -c` snippets, scratch programs in `/tmp`, curl against a dev server, asking it to explore rather than verify one thing). Turn every bug found into a permanent test via red/green TDD. For web UIs use real browser automation (Playwright, agent-browser, his Rodney) and have the agent review screenshots; agents can also maintain brittle browser tests. His Showboat tool records commands with real output so the agent reports what happened, not what it expected.
+
 ## Security: the lethal trifecta (primary post, Jun 2025)
 - Three capabilities that are dangerous together: access to private data, exposure to untrusted content, and a way to send data out. With all three, an attacker can instruct the agent to leak the data.
 - Root cause: LLMs cannot reliably separate operator instructions from instructions embedded in content they read.
@@ -36,10 +38,11 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 - https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/
 - https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/
 - https://simonwillison.net/guides/agentic-engineering-patterns/first-run-the-tests/
+- https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/
 - https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
 - https://lennysnewsletter.com/p/an-ai-state-of-the-union
 
 ## Still to ingest
-- Remaining guide chapters (subagents, anti-patterns, agentic manual testing, linear walkthroughs)
+- Remaining guide chapters (subagents, anti-patterns, linear walkthroughs)
 - Follow-up trifecta posts (CaMeL, design patterns paper)
 - His yearly LLM review posts

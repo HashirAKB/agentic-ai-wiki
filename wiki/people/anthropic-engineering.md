@@ -2,7 +2,7 @@
 
 **Who:** The team behind Claude, Claude Code and the Agent SDK, publishing how they build agents internally.
 **Why credible:** Primary source from a frontier lab, based on production systems.
-**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages)
+**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents)
 **Related:** [Core concepts](../concepts/core-concepts.md)
 
 ## Effective context engineering for AI agents (Sep 2025)
@@ -24,9 +24,16 @@
 - Write descriptions like onboarding a new teammate; unambiguous parameter names (`user_id`, not `user`).
 - Process: prototype, build realistic eval tasks with verifiable outcomes, run them programmatically while tracking accuracy, tool calls and tokens, read transcripts for confusion, then let an agent refactor the tools and check on held-out tasks.
 
+## Effective harnesses for long-running agents
+- Problem: agents work in separate sessions with no memory, so long projects drift, leave half-built features, or declare victory early.
+- Two roles, same tools and system prompt, different first prompts. The **initializer** session expands the request into a long end-to-end feature list (200+ items in their claude.ai-clone example), writes an `init.sh` that starts the app, creates a progress file, and makes the first git commit. **Coding** sessions then do one feature at a time.
+- The feature list is JSON with description, user-level test steps and a `passes` flag, all initially failing. Agents may only flip `passes`; removing or editing tests is forbidden. JSON was chosen because models alter it less casually than Markdown.
+- Session startup routine: confirm working directory, read git log and progress notes, pick the top unfinished feature, run `init.sh` and a basic end-to-end check to catch state left broken by the last session. End each session with a descriptive commit and progress update, leaving a mergeable state.
+- Testing: agents marked features done after unit tests or curl alone. Browser automation (Puppeteer MCP) and "test like a human user" prompting caught real bugs. Limits: imperfect vision, native browser alert modals invisible.
+- Open question from the authors: one general agent vs specialized testing, QA or cleanup agents.
+
 ## Related posts (to ingest)
 - How we built our multi-agent research system
-- Effective harnesses for long-running agents
 - Code execution with MCP
 - Demystifying evals for AI agents
 
@@ -34,4 +41,5 @@
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - https://www.anthropic.com/engineering/building-effective-agents
 - https://www.anthropic.com/engineering/writing-tools-for-agents
+- https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
 - https://www.anthropic.com/engineering
