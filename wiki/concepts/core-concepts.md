@@ -14,6 +14,9 @@ Agents are strongest when they can check their own work. Give success criteria r
 ## Long-running agents: durable state between sessions
 When work spans many context windows, put state in files and git, not memory: a feature list with pass/fail flags the agent may only flip, a progress log, an init script, one feature per session, a startup check that the app still works, and a commit at the end. Verify end to end like a user (real browser), not just unit tests or curl. Sources: [Anthropic](../people/anthropic-engineering.md), [Simon Willison](../people/simon-willison.md) (manual testing: run the code, record real output, turn bugs into tests).
 
+## Subagents and multi-agent systems
+Subagents isolate context: explore, parallel and specialist roles keep the parent's window clean. Multi-agent setups pay off for broad, parallelizable, high-value work (about 15x chat tokens) and poorly for tightly coupled work like most coding. Teach delegation (objective, format, boundaries), put effort-scaling rules in the prompt, and avoid piles of specialists. Sources: [Simon Willison](../people/simon-willison.md), [Anthropic](../people/anthropic-engineering.md).
+
 ## Verifiability and jagged intelligence
 LLMs advance fastest where outcomes are automatically checkable and labs invest training effort. Expect brilliance and basic failures side by side; test empirically whether your task is on the model's rails. Source: [Karpathy](../people/andrej-karpathy.md).
 
@@ -39,4 +42,5 @@ Start with the simplest pattern (single call, chain, routing, parallelization, o
 Prompts, CLAUDE.md and skills are advice the model can decide not to follow; hooks, deny rules, sandboxing, tests and CI are enforced. Use advice for guidelines with exceptions, enforcement for rules with none, and keep CLAUDE.md to what the model cannot learn from the repo. Source: [Boris Cherny / Claude Code docs](../people/boris-cherny.md).
 
 ## Open questions
+- Subagents: Willison says a root agent can often review its own work and warns against many specialists, while Boris Cherny's workflow uses verification subagents ([Boris Cherny](../people/boris-cherny.md)). Likely depends on remaining context; not settled.
 - Agents on novel code: [Karpathy's Oct 2025 interview](../people/andrej-karpathy.md) found coding agents net unhelpful on nanochat, while his 2026 posts treat agentic engineering as the main mode. Probably model progress plus the verifiability point, but not confirmed in his own words.

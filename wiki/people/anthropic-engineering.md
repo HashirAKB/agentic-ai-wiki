@@ -2,7 +2,7 @@
 
 **Who:** The team behind Claude, Claude Code and the Agent SDK, publishing how they build agents internally.
 **Why credible:** Primary source from a frontier lab, based on production systems.
-**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents)
+**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system)
 **Related:** [Core concepts](../concepts/core-concepts.md)
 
 ## Effective context engineering for AI agents (Sep 2025)
@@ -32,8 +32,16 @@
 - Testing: agents marked features done after unit tests or curl alone. Browser automation (Puppeteer MCP) and "test like a human user" prompting caught real bugs. Limits: imperfect vision, native browser alert modals invisible.
 - Open question from the authors: one general agent vs specialized testing, QA or cleanup agents.
 
+## How we built our multi-agent research system
+- Architecture: orchestrator-worker. A lead agent plans (saving the plan to external memory so truncation cannot lose it), spawns parallel subagents that each run their own search loop and return condensed findings, then a separate citation agent attributes claims. Search is iterative, unlike one-shot RAG.
+- Delegation must be taught: each subagent needs an objective, output format, tool/source guidance and boundaries, or they duplicate work or leave gaps.
+- Embed effort-scaling rules in the prompt: simple fact-finding is 1 agent with a few tool calls; comparisons 2-4 subagents; complex research 10+. Early versions spawned up to 50 subagents for trivial queries.
+- Practices: simulate the agent step by step to see failure modes; search broad then narrow; extended thinking for the lead, interleaved thinking for subagents; a tool-testing agent that rewrote a flawed tool description cut later task time about 40%; prefer heuristics over rigid rules; subagents write to files and pass references back rather than relaying everything through the lead.
+- Evals: start with about 20 realistic queries; judge outcomes not paths; a single-prompt LLM judge (accuracy, citations, completeness, source quality, tool efficiency) matched humans best; human testing still caught agents preferring SEO content farms.
+- Results and costs: Opus lead plus Sonnet subagents beat single-agent Opus by 90.2% on their internal eval; token usage explained about 80% of BrowseComp variance. Cost is about 4x chat tokens for an agent and 15x for multi-agent, so use it for high-value, parallelizable work, not tightly coupled tasks like most coding.
+- Production: resume from checkpoints, full tracing, rainbow deployments for in-flight agents; a lead that waits synchronously for subagents is a known bottleneck.
+
 ## Related posts (to ingest)
-- How we built our multi-agent research system
 - Code execution with MCP
 - Demystifying evals for AI agents
 
@@ -42,4 +50,5 @@
 - https://www.anthropic.com/engineering/building-effective-agents
 - https://www.anthropic.com/engineering/writing-tools-for-agents
 - https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
+- https://www.anthropic.com/engineering/multi-agent-research-system
 - https://www.anthropic.com/engineering

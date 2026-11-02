@@ -2,7 +2,7 @@
 
 **Who:** Co-creator of Django, creator of Datasette and the `llm` CLI, prolific independent blogger on practical LLM use (simonwillison.net). Coined "prompt injection" and the "lethal trifecta" for agent security.
 **Why credible:** Builds and publishes daily, documents his real prompts and failures, discloses sponsorships.
-**Ingested:** 2026-10-30 (guide contents); 2026-10-30 (red/green TDD, first-run-the-tests, lethal trifecta read from primary pages)
+**Ingested:** 2026-10-30 (guide contents); 2026-10-30 (red/green TDD, first-run-the-tests, lethal trifecta read from primary pages); 2026-11-02 (subagents chapter)
 **Related:** [Core concepts](../concepts/core-concepts.md), [Karpathy](andrej-karpathy.md)
 
 ## Agentic Engineering Patterns (guide, started Feb 2026)
@@ -28,6 +28,8 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 
 - **Agentic manual testing:** passing automated tests does not prove the software works; have the agent actually run it (`python -c` snippets, scratch programs in `/tmp`, curl against a dev server, asking it to explore rather than verify one thing). Turn every bug found into a permanent test via red/green TDD. For web UIs use real browser automation (Playwright, agent-browser, his Rodney) and have the agent review screenshots; agents can also maintain brittle browser tests. His Showboat tool records commands with real output so the agent reports what happened, not what it expected.
 
+- **Subagents:** a subagent is a fresh copy of the agent with its own context window and a focused prompt; the parent waits like on any tool call. Its main value is protecting the parent's context (quality tends to be better well under the maximum window). Three patterns: *explore* (map the repo and return file locations and line numbers before editing), *parallel* (independent edits across many files, possibly with a cheaper fast model), *specialist* (code reviewer, test runner that reports only failures, debugger). Caveats: do not create dozens of specialists; the root agent can often review or debug its own work if it has context left; parallelism only helps for genuinely independent tasks.
+
 ## Security: the lethal trifecta (primary post, Jun 2025)
 - Three capabilities that are dangerous together: access to private data, exposure to untrusted content, and a way to send data out. With all three, an attacker can instruct the agent to leak the data.
 - Root cause: LLMs cannot reliably separate operator instructions from instructions embedded in content they read.
@@ -39,10 +41,11 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 - https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/
 - https://simonwillison.net/guides/agentic-engineering-patterns/first-run-the-tests/
 - https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/
+- https://simonwillison.net/guides/agentic-engineering-patterns/subagents/
 - https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
 - https://lennysnewsletter.com/p/an-ai-state-of-the-union
 
 ## Still to ingest
-- Remaining guide chapters (subagents, anti-patterns, linear walkthroughs)
+- Remaining guide chapters (anti-patterns, linear walkthroughs)
 - Follow-up trifecta posts (CaMeL, design patterns paper)
 - His yearly LLM review posts

@@ -20,3 +20,4 @@ Append-only. Newest at the bottom.
 ## [2026-10-31] radar | 11 items, top: SDK majors + /claude-api api-version, MCP Inspector
 ## [2026-11-01] ingest | Anthropic: Effective harnesses for long-running agents; Simon Willison: agentic manual testing
 ## [2026-11-01] lint | Weekly pass: relative links checked, no orphans or contradictions found
+## [2026-11-02] ingest | Simon Willison: subagents chapter; Anthropic: multi-agent research system
