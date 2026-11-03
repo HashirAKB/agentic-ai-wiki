@@ -2,7 +2,7 @@
 
 **Who:** The team behind Claude, Claude Code and the Agent SDK, publishing how they build agents internally.
 **Why credible:** Primary source from a frontier lab, based on production systems.
-**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system)
+**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system); 2026-11-03 (Demystifying evals for AI agents)
 **Related:** [Core concepts](../concepts/core-concepts.md)
 
 ## Effective context engineering for AI agents (Sep 2025)
@@ -41,9 +41,18 @@
 - Results and costs: Opus lead plus Sonnet subagents beat single-agent Opus by 90.2% on their internal eval; token usage explained about 80% of BrowseComp variance. Cost is about 4x chat tokens for an agent and 15x for multi-agent, so use it for high-value, parallelizable work, not tightly coupled tasks like most coding.
 - Production: resume from checkpoints, full tracing, rainbow deployments for in-flight agents; a lead that waits synchronously for subagents is a known bottleneck.
 
+## Demystifying evals for AI agents
+- Vocabulary: a *task* is one test, a *trial* one attempt (run several, outputs vary), a *grader* scores something, the *transcript* is the full record, the *outcome* is the final environment state (a reservation row exists, not "I booked it"). Evaluating an agent means evaluating harness plus model together.
+- Graders: code-based (fast, objective, brittle), model-based (flexible, nondeterministic, must be calibrated to humans; allow an "Unknown" answer, one judge per dimension), human (gold standard, slow). Combine them; grade the outcome rather than a rigid tool-call sequence, and give partial credit on multi-part tasks.
+- Capability evals start at a low pass rate and give a target; regression evals sit near 100% and catch backsliding. Saturated capability evals graduate to regression suites, and you then need harder tasks.
+- pass@k (at least one success in k) fits cases where one good answer is enough; pass^k (all k succeed) fits customer-facing consistency. At 75% per trial, three in a row is about 42%.
+- Per agent type: coding uses deterministic tests (SWE-bench Verified, Terminal-Bench); conversational combines end-state, turn limits and rubric-graded tone with a simulated user (tau-bench); research mixes groundedness, coverage and source-quality checks; computer use checks real page, backend and file state.
+- Roadmap: start early with 20-50 tasks from real failures and what you already test manually; write tasks two experts would grade identically, each with a known-good reference solution (0% over many trials usually means a broken task); balance positive and negative cases; start every trial from a clean environment; make graders hard to game; read the transcripts; maintain the suite. Eval-driven development means defining capabilities before agents can meet them.
+- Pitfalls: over-rigid step checks, grader bugs (one example moved from 42% to 95% after fixing grader and scaffold), shared state between trials, infrastructure limits causing correlated failures, one-sided sets, loopholes, trusting scores without reading transcripts.
+- Evals are one layer among production monitoring, A/B tests, user feedback, manual transcript review and human studies; none catches everything.
+
 ## Related posts (to ingest)
 - Code execution with MCP
-- Demystifying evals for AI agents
 
 ## Links
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
@@ -51,4 +60,5 @@
 - https://www.anthropic.com/engineering/writing-tools-for-agents
 - https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
 - https://www.anthropic.com/engineering/multi-agent-research-system
+- https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
 - https://www.anthropic.com/engineering

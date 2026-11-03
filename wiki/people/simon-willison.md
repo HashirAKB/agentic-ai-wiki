@@ -30,6 +30,8 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 
 - **Subagents:** a subagent is a fresh copy of the agent with its own context window and a focused prompt; the parent waits like on any tool call. Its main value is protecting the parent's context (quality tends to be better well under the maximum window). Three patterns: *explore* (map the repo and return file locations and line numbers before editing), *parallel* (independent edits across many files, possibly with a cheaper fast model), *specialist* (code reviewer, test runner that reports only failures, debugger). Caveats: do not create dozens of specialists; the root agent can often review or debug its own work if it has context left; parallelism only helps for genuinely independent tasks.
 
+- **Anti-pattern: inflicting unreviewed code on collaborators.** Opening a PR of agent-generated code you have not reviewed or tested makes reviewers the first line of quality control, and they could have prompted an agent themselves. Before asking for review: it works and you are confident of that; it is small (agents can split work into separate commits); it explains the goal and links issues; you have read any agent-written description. Include evidence of your own review such as manual-testing notes, comments on key choices, or screenshots/video.
+
 ## Security: the lethal trifecta (primary post, Jun 2025)
 - Three capabilities that are dangerous together: access to private data, exposure to untrusted content, and a way to send data out. With all three, an attacker can instruct the agent to leak the data.
 - Root cause: LLMs cannot reliably separate operator instructions from instructions embedded in content they read.
@@ -42,10 +44,11 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 - https://simonwillison.net/guides/agentic-engineering-patterns/first-run-the-tests/
 - https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/
 - https://simonwillison.net/guides/agentic-engineering-patterns/subagents/
+- https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/
 - https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
 - https://lennysnewsletter.com/p/an-ai-state-of-the-union
 
 ## Still to ingest
-- Remaining guide chapters (anti-patterns, linear walkthroughs)
+- Remaining guide chapters (linear walkthroughs; the anti-patterns page currently shows only one anti-pattern)
 - Follow-up trifecta posts (CaMeL, design patterns paper)
 - His yearly LLM review posts

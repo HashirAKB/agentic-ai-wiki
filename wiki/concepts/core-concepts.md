@@ -27,7 +27,10 @@ AI generates, human verifies; an autonomy slider; small chunks; human checkpoint
 Every mistake becomes a rule (CLAUDE.md), every repeated workflow becomes a command or skill, every good answer gets filed into the knowledge base. Sources: [Boris Cherny](../people/boris-cherny.md), [Simon Willison](../people/simon-willison.md), [Karpathy](../people/andrej-karpathy.md).
 
 ## Evals and error analysis
-Look at real outputs first, categorize failures, fix the most common, then build targeted pass/fail evals and validated LLM judges. Source: [Hamel Husain](../people/hamel-husain.md).
+Look at real outputs first, categorize failures, fix the most common, then build targeted pass/fail evals and validated LLM judges. Source: [Hamel Husain](../people/hamel-husain.md). Anthropic adds: grade the final environment outcome rather than the tool-call path, run several trials per task, use pass@k when one success suffices and pass^k when consistency matters, keep capability evals (low pass rate) separate from regression evals (near 100%), give every task a reference solution, and read transcripts. See [Anthropic Engineering](../people/anthropic-engineering.md).
+
+## Reviewing agent output before handing it on
+Sending unreviewed agent-generated code or text to collaborators shifts the verification work onto them. Verify it yourself, keep changes small, explain the goal, and show evidence of testing. Source: [Simon Willison](../people/simon-willison.md).
 
 ## Agent-native surfaces
 Build for the agent as user: markdown docs, CLIs, APIs, MCP servers, copy-pasteable agent instructions. Source: [Karpathy](../people/andrej-karpathy.md).

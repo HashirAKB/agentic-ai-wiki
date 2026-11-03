@@ -20,3 +20,7 @@ Practice: for under-specified features, interview me with multiple-choice questi
 ### [2026-11-01] Long tasks: feature list, progress file, end-to-end check
 Practice: for multi-session builds, write a JSON feature list (all failing, only the pass flag editable), a progress log and an init script; work one feature per session, start by running the app, end with a commit. Source: [Anthropic](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents).
 Suggested wording: "For work spanning sessions, keep a feature list and progress file in the repo; never mark a feature done without running it end to end."
+
+### [2026-11-03] Self-review agent-written PRs before asking for review
+Practice: never hand over a PR or description you have not read and tested; keep it small, state the goal, attach evidence of manual testing. Source: [Willison anti-patterns](https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/).
+Suggested wording: "Before opening or requesting review of a PR, run the tests, exercise the change, read the description for accuracy, and list what was verified."
