@@ -18,5 +18,15 @@
 ## Links
 - https://hamel.dev/blog/posts/evals-faq/
 
+## Your AI product needs evals (ingested 2026-11-04)
+Source: https://hamel.dev/blog/posts/evals/
+- Products fail mostly because they lack an eval system, not because of the model. The same system powers debugging and fine-tuning data.
+- Three levels, costliest last: (1) unit tests, cheap assertions run on every change; (2) human and LLM-judge review of logged traces on a cadence; (3) A/B tests for mature products.
+- Unit tests: scope by feature and scenario (one match, many, none), add generic ones (e.g. regex that internal IDs never leak), have an LLM generate test inputs, keep them hard and updated. A 100% pass rate is not required; the target is a product decision.
+- Human review: build a simple domain-specific viewer (Gradio, Streamlit) showing everything on one screen, make outputs editable, start with binary good/bad, and read data until you stop learning new things.
+- LLM judge: align mainly through prompt iteration against human labels, measure precision and recall rather than raw agreement (class imbalance), and re-check periodically.
+- Synthetic data: use an LLM to brainstorm realistic inputs, filter with your assertions and judge, then curate by hand. Fine-tuning suits style, syntax and rules; RAG suits fresh facts.
+- Pitfalls: prompt whack-a-mole, vibe checks only, skipping unit tests, generic frameworks, buying tools too early, too little data reading, treating evals as done.
+
 ## Still to ingest
-- "Your AI product needs evals", "Creating an LLM-as-a-judge", "A field guide to rapidly improving AI products"
+- "Creating an LLM-as-a-judge", "A field guide to rapidly improving AI products"

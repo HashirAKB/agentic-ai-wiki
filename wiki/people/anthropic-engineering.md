@@ -51,8 +51,13 @@
 - Pitfalls: over-rigid step checks, grader bugs (one example moved from 42% to 95% after fixing grader and scaffold), shared state between trials, infrastructure limits causing correlated failures, one-sided sets, loopholes, trusting scores without reading transcripts.
 - Evals are one layer among production monitoring, A/B tests, user feedback, manual transcript review and human studies; none catches everything.
 
-## Related posts (to ingest)
-- Code execution with MCP
+## Code execution with MCP
+- Problem: loading every MCP tool definition up front, and routing big intermediate results through the model, burns context. Thousands of tools can mean hundreds of thousands of tokens before the request is read; a 2-hour meeting transcript passed between tools costs roughly 50k extra tokens.
+- Pattern: present MCP servers as code on a filesystem (one file per tool). The agent lists the directory and reads only the tools it needs, or calls a `search_tools` tool with a chosen detail level (name, description, full schema). This is progressive disclosure.
+- Do filtering, loops, conditionals and polling in code in the sandbox so the model sees a summary (5 rows of a 10,000-row sheet), not the raw data. Their Drive-to-Salesforce example went from about 150k to 2k tokens.
+- Privacy: intermediate results stay in the execution environment by default; the client can tokenize PII so the model sees placeholders while real values flow between tools.
+- State and skills: agents can save files to resume work and save working code as reusable functions; add a SKILL.md and it becomes a skill.
+- Caveat: needs a secure sandbox, resource limits and monitoring. Weigh that overhead against the token, cost and latency savings.
 
 ## Links
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
@@ -61,4 +66,5 @@
 - https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
 - https://www.anthropic.com/engineering/multi-agent-research-system
 - https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
+- https://www.anthropic.com/engineering/code-execution-with-mcp
 - https://www.anthropic.com/engineering
