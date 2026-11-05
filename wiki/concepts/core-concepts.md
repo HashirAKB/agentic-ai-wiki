@@ -47,6 +47,9 @@ Start with the simplest pattern (single call, chain, routing, parallelization, o
 ## Deterministic vs non-deterministic instructions
 Prompts, CLAUDE.md and skills are advice the model can decide not to follow; hooks, deny rules, sandboxing, tests and CI are enforced. Use advice for guidelines with exceptions, enforcement for rules with none, and keep CLAUDE.md to what the model cannot learn from the repo. Source: [Boris Cherny / Claude Code docs](../people/boris-cherny.md).
 
+## AI engineer role and agent planning
+The AI engineer builds products on existing models; the job centres on owning data and evals and shipping fast, with ordinary code kept central. Source: [swyx](../people/swyx.md). For agents, validate plans before executing them, reflect at checkpoints, and evaluate plan validity, tool-call errors and step efficiency separately. Source: [Chip Huyen](../people/chip-huyen.md).
+
 ## Open questions
 - Subagents: Willison says a root agent can often review its own work and warns against many specialists, while Boris Cherny's workflow uses verification subagents ([Boris Cherny](../people/boris-cherny.md)). Likely depends on remaining context; not settled.
 - Agents on novel code: [Karpathy's Oct 2025 interview](../people/andrej-karpathy.md) found coding agents net unhelpful on nanochat, while his 2026 posts treat agentic engineering as the main mode. Probably model progress plus the verifiability point, but not confirmed in his own words.

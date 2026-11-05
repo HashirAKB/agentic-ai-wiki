@@ -10,8 +10,8 @@ Research one or two items per daily run, top of the list first. Mark DONE with t
 5. PARTIAL (2026-11-04; "Your AI product needs evals" done) - Hamel Husain: LLM-as-judge guide, field guide to improving AI products
 
 ## Priority 2: new credible practitioners
-6. TODO - swyx (Shawn Wang): AI engineer role definition, Latent Space
-7. TODO - Chip Huyen: AI Engineering book themes, agents post
+6. PARTIAL (2026-11-05; Rise of the AI Engineer done; left: Latent Space agent talks) - swyx (Shawn Wang)
+7. PARTIAL (2026-11-05; agents post done; left: AI Engineering book themes, eval/RAG posts) - Chip Huyen
 8. TODO - Eugene Yan: patterns for LLM systems, evals, applied LLM lessons
 9. TODO - Andrew Ng: agentic design patterns (reflection, tool use, planning, multi-agent)
 10. TODO - Harrison Chase (LangChain/LangGraph): agent architectures, context engineering (write/select/compress/isolate)
