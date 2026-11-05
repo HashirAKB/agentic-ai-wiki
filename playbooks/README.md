@@ -14,6 +14,16 @@ There is no limit on how many tools are queued or learning at once. The Sunday d
 | security-guidance (plugin) | [security-guidance.md](security-guidance.md) | queued | 2026-10-30 |
 | code-review (plugin) | [code-review.md](code-review.md) | queued | 2026-10-30 |
 | mcp-server-dev (plugin) | [mcp-server-dev.md](mcp-server-dev.md) | queued | 2026-10-30 |
+| MCP Inspector (CLI) | [mcp-inspector.md](mcp-inspector.md) | queued | 2026-11-05 |
+| SDK majors + `/claude-api api-version` | [claude-api-version-migration.md](claude-api-version-migration.md) | queued | 2026-11-05 |
+| OpenTelemetry export (SDK, beta) | [otel-export.md](otel-export.md) | queued | 2026-11-05 |
+| Long multi-agent Claude Code runs (workflow) | [long-multi-agent-runs.md](long-multi-agent-runs.md) | queued | 2026-11-05 |
+| Managed Agents dynamic workflows (API, beta) | [managed-agents-workflows.md](managed-agents-workflows.md) | queued | 2026-11-05 |
+| Reference Git MCP server | [git-mcp-server.md](git-mcp-server.md) | queued | 2026-11-05 |
+| Prompt caching / Sonnet 5.5 cache reads | [prompt-caching.md](prompt-caching.md) | queued | 2026-11-05 |
+| knowledge-work-plugins `data` (plugin) | [knowledge-work-data.md](knowledge-work-data.md) | queued | 2026-11-05 |
+| claude-plugins-community (marketplace) | [claude-plugins-community.md](claude-plugins-community.md) | queued | 2026-11-05 |
+| Opus 5.5 fast mode + SDK computer-use classes | [opus-fast-mode.md](opus-fast-mode.md) | queued | 2026-11-05 |
 
 ## Template for new playbooks
 ```

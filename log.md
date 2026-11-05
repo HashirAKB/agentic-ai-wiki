@@ -24,3 +24,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-03] ingest | Anthropic: Demystifying evals for AI agents; Simon Willison: anti-patterns (unreviewed PRs)
 ## [2026-11-04] ingest | Anthropic: Code execution with MCP; Hamel Husain: Your AI product needs evals
 ## [2026-11-05] ingest | swyx: Rise of the AI Engineer; Chip Huyen: Agents post
+## [2026-11-05] applied | Approved P1 (hooks over CLAUDE.md emphasis) and P2 (interview-to-spec), saved as preferences; queued 10 radar items from 2026-10-31 with playbooks
