@@ -50,6 +50,9 @@ Prompts, CLAUDE.md and skills are advice the model can decide not to follow; hoo
 ## AI engineer role and agent planning
 The AI engineer builds products on existing models; the job centres on owning data and evals and shipping fast, with ordinary code kept central. Source: [swyx](../people/swyx.md). For agents, validate plans before executing them, reflect at checkpoints, and evaluate plan validity, tool-call errors and step efficiency separately. Source: [Chip Huyen](../people/chip-huyen.md).
 
+## Production patterns for LLM features
+Beyond the model call: hybrid keyword plus embedding retrieval, caching on safe keys rather than semantic similarity, deterministic guardrails before LLM-based ones, UX that makes errors cheap to dismiss, and feedback signals feeding evals. LLM judges show position, length and self-preference biases, so pair them with human review. Source: [Eugene Yan](../people/eugene-yan.md).
+
 ## Open questions
 - Subagents: Willison says a root agent can often review its own work and warns against many specialists, while Boris Cherny's workflow uses verification subagents ([Boris Cherny](../people/boris-cherny.md)). Likely depends on remaining context; not settled.
 - Agents on novel code: [Karpathy's Oct 2025 interview](../people/andrej-karpathy.md) found coding agents net unhelpful on nanochat, while his 2026 posts treat agentic engineering as the main mode. Probably model progress plus the verifiability point, but not confirmed in his own words.

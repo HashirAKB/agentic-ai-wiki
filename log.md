@@ -26,3 +26,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-05] ingest | swyx: Rise of the AI Engineer; Chip Huyen: Agents post
 ## [2026-11-05] applied | Approved P1 (hooks over CLAUDE.md emphasis) and P2 (interview-to-spec), saved as preferences; queued 10 radar items from 2026-10-31 with playbooks
 ## [2026-11-05] applied | Approved P3 (feature list + progress file for long tasks) and P4 (self-review PRs), saved as preferences
+## [2026-11-06] ingest | Eugene Yan: Patterns for LLM-based systems (Andrew Ng blocked, left TODO)

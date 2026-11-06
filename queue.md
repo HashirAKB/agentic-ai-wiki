@@ -12,8 +12,8 @@ Research one or two items per daily run, top of the list first. Mark DONE with t
 ## Priority 2: new credible practitioners
 6. PARTIAL (2026-11-05; Rise of the AI Engineer done; left: Latent Space agent talks) - swyx (Shawn Wang)
 7. PARTIAL (2026-11-05; agents post done; left: AI Engineering book themes, eval/RAG posts) - Chip Huyen
-8. TODO - Eugene Yan: patterns for LLM systems, evals, applied LLM lessons
-9. TODO - Andrew Ng: agentic design patterns (reflection, tool use, planning, multi-agent)
+8. PARTIAL (2026-11-06; Patterns for LLM systems done; left: Applied LLMs lessons, eval posts) - Eugene Yan
+9. TODO (2026-11-06: deeplearning.ai returned 403 and only secondary summaries were found; try other mirrors or his talks) - Andrew Ng: agentic design patterns (reflection, tool use, planning, multi-agent)
 10. TODO - Harrison Chase (LangChain/LangGraph): agent architectures, context engineering (write/select/compress/isolate)
 11. TODO - Addy Osmani: agentic engineering post
 12. TODO - Jason Liu: RAG and structured outputs lessons, career advice for AI engineers
