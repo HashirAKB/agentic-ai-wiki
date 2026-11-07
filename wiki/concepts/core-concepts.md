@@ -7,6 +7,7 @@ Vibe coding: build by describing, without caring about the code (fine for protot
 
 ## Context engineering
 Curating everything in the context window (instructions, tools, memory, retrieved data, history) with the minimum high-signal tokens for the next step. Techniques: right-altitude prompts, compaction, external notes, sub-agents for isolated context. Sources: [Karpathy](../people/andrej-karpathy.md), [Anthropic](../people/anthropic-engineering.md).
+A useful checklist from the [LangChain team](../people/harrison-chase.md): **write** (scratchpads, memories outside the window), **select** (retrieve only relevant notes, tools, facts), **compress** (summarize, trim), **isolate** (sub-agents, sandboxes, state fields). Named failure modes: context poisoning, distraction, confusion, clash. Instrument token use and test each context change before keeping it.
 
 ## Verification loops and declarative goals
 Agents are strongest when they can check their own work. Give success criteria rather than steps; tests first (red/green TDD); run existing tests first; browser or app-level verification; naive correct version, then optimize. The short prompts "Use red/green TDD" and "First run the tests" each carry a whole workflow. Sources: [Karpathy](../people/andrej-karpathy.md), [Simon Willison](../people/simon-willison.md), [Boris Cherny](../people/boris-cherny.md).

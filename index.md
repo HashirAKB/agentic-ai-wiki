@@ -17,6 +17,7 @@ Read this first. One line per page. Updated on every ingest.
 - [swyx](wiki/people/swyx.md) - AI engineer role definition: product-focused, prompt-first, owns data and evals
 - [Chip Huyen](wiki/people/chip-huyen.md) - agents: tool types, plan-then-execute, reflection, failure modes, how to evaluate agents
 - [Eugene Yan](wiki/people/eugene-yan.md) - seven patterns for LLM systems: evals, RAG, fine-tuning, caching, guardrails, defensive UX, user feedback
+- [Harrison Chase / LangChain](wiki/people/harrison-chase.md) - context engineering for agents: write, select, compress, isolate; context failure modes; trace before tuning
 
 ## Concepts
 - [Core concepts](wiki/concepts/core-concepts.md) - agentic engineering, context engineering, verification loops, verifiability, partial autonomy, compounding engineering, evals, agent-native surfaces, lethal trifecta, workflows vs agents, tool design, deterministic vs non-deterministic instructions, long-running agents, subagents and multi-agent systems, code execution over tool calls

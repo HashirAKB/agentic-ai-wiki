@@ -26,3 +26,7 @@ Practice: never hand over a PR or description you have not read and tested; keep
 Suggested wording: "Before opening or requesting review of a PR, run the tests, exercise the change, read the description for accuracy, and list what was verified."
 
 ## Pending
+
+### [2026-11-07] Diagnose long-session drift with the four context failure modes
+Practice: when an agent degrades mid-task, check for poisoning, distraction, confusion or clash, then fix with write/select/compress/isolate (save the plan to a file, use a subagent for noisy searches) rather than adding more instructions. Source: [LangChain context engineering](https://www.langchain.com/blog/context-engineering-for-agents).
+Suggested wording: "If a session has gotten long or noisy, say so, write the plan and state to a file, and offer to delegate noisy research to a subagent or start fresh."
