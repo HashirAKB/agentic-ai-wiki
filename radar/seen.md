@@ -20,3 +20,15 @@
 | Opus 5.5 fast mode GA + SDK computer-use classes | https://platform.claude.com/docs/en/release-notes/overview | 2026-10-31 | Watch |
 | Long multi-agent Claude Code run (Willison) | https://simonwillison.net/2026/Oct/16/sqlite-sparql-rust/ | 2026-10-31 | Watch |
 | ai.achromat/mcp-server | https://github.com/achromat-ai/achromat-mcp-server | 2026-10-31 | Skip-for-now |
+| Agent memory guide (memory dir, dreaming, knowledge wiki) | https://www.anthropic.com/research/components-of-agent-memory | 2026-11-07 | Try now |
+| permissions.denyInsteadOfPrompting | https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md | 2026-11-07 | Try now |
+| /claude-api latency-optimize | https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md | 2026-11-07 | Try now |
+| CLAUDE_CODE_SUBAGENT_EFFORT | https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md | 2026-11-07 | Try now |
+| Message threads (beta) | https://platform.claude.com/docs/en/release-notes/overview | 2026-11-07 | Watch |
+| Usage and Cost Analytics API (beta) | https://platform.claude.com/docs/en/release-notes/overview | 2026-11-07 | Watch |
+| Opus 4.8 fast mode removal (2026-11-30) | https://platform.claude.com/docs/en/release-notes/overview | 2026-11-07 | Watch |
+| Agent SDK hook onFailure block | https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md | 2026-11-07 | Watch |
+| MCP tasks in background | https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md | 2026-11-07 | Watch |
+| datasette-agent 0.5a0 | https://simonwillison.net/2026/Nov/3/datasette-agent/ | 2026-11-07 | Watch |
+| ai.adeu/adeu (DOCX redlining MCP) | https://github.com/dealfluence/adeu | 2026-11-07 | Watch |
+| agency.extremely/agency | https://github.com/maxkxd/extremely-autonomous-agents | 2026-11-07 | Skip-for-now |

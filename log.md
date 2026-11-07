@@ -28,3 +28,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-05] applied | Approved P3 (feature list + progress file for long tasks) and P4 (self-review PRs), saved as preferences
 ## [2026-11-06] ingest | Eugene Yan: Patterns for LLM-based systems (Andrew Ng blocked, left TODO)
 ## [2026-11-07] ingest | Harrison Chase / LangChain team: Context Engineering for Agents (Andrew Ng still blocked)
+## [2026-11-07] radar | 12 items, top: Agent memory guide, permissions.denyInsteadOfPrompting, /claude-api latency-optimize, CLAUDE_CODE_SUBAGENT_EFFORT
