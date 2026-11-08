@@ -54,6 +54,9 @@ The AI engineer builds products on existing models; the job centres on owning da
 ## Production patterns for LLM features
 Beyond the model call: hybrid keyword plus embedding retrieval, caching on safe keys rather than semantic similarity, deterministic guardrails before LLM-based ones, UX that makes errors cheap to dismiss, and feedback signals feeding evals. LLM judges show position, length and self-preference biases, so pair them with human review. Source: [Eugene Yan](../people/eugene-yan.md).
 
+## Owning the outer loop
+Agents run the inner loop (investigate, implement, verify); humans own the boundary where output reaches production: quality checks installed up front, a human verdict on the evidence, and someone answerable for the change. Delegation has costs: accepting output unexamined, eroding understanding, and attention that does not parallelize. Keep expertise alive by predicting solutions, reading diffs and asking the agent why. Audit agent config monthly: prune rules the model can infer, test removal against a real task, move hard constraints into hooks and tests. Source: [Addy Osmani](../people/addy-osmani.md).
+
 ## Open questions
 - Subagents: Willison says a root agent can often review its own work and warns against many specialists, while Boris Cherny's workflow uses verification subagents ([Boris Cherny](../people/boris-cherny.md)). Likely depends on remaining context; not settled.
 - Agents on novel code: [Karpathy's Oct 2025 interview](../people/andrej-karpathy.md) found coding agents net unhelpful on nanochat, while his 2026 posts treat agentic engineering as the main mode. Probably model progress plus the verifiability point, but not confirmed in his own words.

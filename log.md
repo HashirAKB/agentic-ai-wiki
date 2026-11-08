@@ -29,3 +29,5 @@ Append-only. Newest at the bottom.
 ## [2026-11-06] ingest | Eugene Yan: Patterns for LLM-based systems (Andrew Ng blocked, left TODO)
 ## [2026-11-07] ingest | Harrison Chase / LangChain team: Context Engineering for Agents (Andrew Ng still blocked)
 ## [2026-11-07] radar | 12 items, top: Agent memory guide, permissions.denyInsteadOfPrompting, /claude-api latency-optimize, CLAUDE_CODE_SUBAGENT_EFFORT
+## [2026-11-08] ingest | Addy Osmani: Own the Outer Loop, Audit your Agent files, Agentic Skill Decay
+## [2026-11-08] lint | Weekly pass: links checked, new page indexed, no contradictions found; Jason Liu search found no direct post, still TODO
