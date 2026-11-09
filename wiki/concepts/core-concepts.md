@@ -57,6 +57,10 @@ Beyond the model call: hybrid keyword plus embedding retrieval, caching on safe 
 ## Owning the outer loop
 Agents run the inner loop (investigate, implement, verify); humans own the boundary where output reaches production: quality checks installed up front, a human verdict on the evidence, and someone answerable for the change. Delegation has costs: accepting output unexamined, eroding understanding, and attention that does not parallelize. Keep expertise alive by predicting solutions, reading diffs and asking the agent why. Audit agent config monthly: prune rules the model can infer, test removal against a real task, move hard constraints into hooks and tests. Source: [Addy Osmani](../people/addy-osmani.md).
 
+## RAG evaluation and agent building blocks
+Evaluate RAG by the failing pair among question, context and answer (six checks); start from synthetic questions per chunk, then segment real queries and prioritize clusters by volume and dissatisfaction, with specific feedback prompts. Source: [Jason Liu](../people/jason-liu.md). The classic agent frame is planning, memory and tool use, with finite context, weak long-horizon planning and brittle output parsing as the known limits. Source: [Lilian Weng](../people/lilian-weng.md).
+
 ## Open questions
+- Retrieval for coding agents: Jason Liu's blog index points to posts arguing grep and direct exploration beat embedding RAG, while his RAG-improvement posts assume embedding plus full-text retrieval. Different settings (code vs documents); not yet read.
 - Subagents: Willison says a root agent can often review its own work and warns against many specialists, while Boris Cherny's workflow uses verification subagents ([Boris Cherny](../people/boris-cherny.md)). Likely depends on remaining context; not settled.
 - Agents on novel code: [Karpathy's Oct 2025 interview](../people/andrej-karpathy.md) found coding agents net unhelpful on nanochat, while his 2026 posts treat agentic engineering as the main mode. Probably model progress plus the verifiability point, but not confirmed in his own words.

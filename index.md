@@ -19,6 +19,8 @@ Read this first. One line per page. Updated on every ingest.
 - [Eugene Yan](wiki/people/eugene-yan.md) - seven patterns for LLM systems: evals, RAG, fine-tuning, caching, guardrails, defensive UX, user feedback
 - [Harrison Chase / LangChain](wiki/people/harrison-chase.md) - context engineering for agents: write, select, compress, isolate; context failure modes; trace before tuning
 - [Addy Osmani](wiki/people/addy-osmani.md) - owning the outer loop (quality, verdict, answerability), monthly audit of agent files, agentic skill decay
+- [Jason Liu](wiki/people/jason-liu.md) - systematically improving RAG (synthetic data, query segmentation, specific feedback), six RAG evals
+- [Lilian Weng](wiki/people/lilian-weng.md) - LLM-powered agents: planning, memory, tool use, known limits (2023 survey)
 
 ## Concepts
 - [Core concepts](wiki/concepts/core-concepts.md) - agentic engineering, context engineering, verification loops, verifiability, partial autonomy, compounding engineering, evals, agent-native surfaces, lethal trifecta, workflows vs agents, tool design, deterministic vs non-deterministic instructions, long-running agents, subagents and multi-agent systems, code execution over tool calls
