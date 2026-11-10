@@ -25,11 +25,12 @@ Suggested wording: "For work spanning sessions, keep a feature list and progress
 Practice: never hand over a PR or description you have not read and tested; keep it small, state the goal, attach evidence of manual testing. Source: [Willison anti-patterns](https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/).
 Suggested wording: "Before opening or requesting review of a PR, run the tests, exercise the change, read the description for accuracy, and list what was verified."
 
-## Pending
-
-### [2026-11-07] Diagnose long-session drift with the four context failure modes
+## Approved 2026-11-10 (saved as Claude preferences)
+### APPROVED 2026-11-10: [2026-11-07] Diagnose long-session drift with the four context failure modes
 Practice: when an agent degrades mid-task, check for poisoning, distraction, confusion or clash, then fix with write/select/compress/isolate (save the plan to a file, use a subagent for noisy searches) rather than adding more instructions. Source: [LangChain context engineering](https://www.langchain.com/blog/context-engineering-for-agents).
 Suggested wording: "If a session has gotten long or noisy, say so, write the plan and state to a file, and offer to delegate noisy research to a subagent or start fresh."
+
+## Pending
 
 ### [2026-11-08] Monthly audit of CLAUDE.md, memory and skills
 Practice: every few weeks run `/doctor` and `/memory`, remove rules the model can infer or that newer models no longer need, then test a real task without them; keep what fails the way it was meant to prevent. Source: [Addy Osmani](https://addyosmani.com/blog/audit-your-agent-files/).
