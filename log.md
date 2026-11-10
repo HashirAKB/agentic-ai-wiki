@@ -34,3 +34,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-09] ingest | Jason Liu: Systematically Improving RAG, Only 6 RAG evals; Lilian Weng: LLM-Powered Autonomous Agents (Andrew Ng skipped, still blocked)
 ## [2026-11-10] ingest | Dan Shipper / Every: compound engineering; Simon Willison: linear walkthroughs (Andrew Ng skipped, still blocked)
 ## [2026-11-10] applied | Approved P1 (diagnose long-session drift with context failure modes), saved as a preference
+## [2026-11-10] applied | Approved P2 (monthly audit of CLAUDE.md, preferences and skills), saved as a preference
