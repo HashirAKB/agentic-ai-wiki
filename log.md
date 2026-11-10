@@ -32,3 +32,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-08] ingest | Addy Osmani: Own the Outer Loop, Audit your Agent files, Agentic Skill Decay
 ## [2026-11-08] lint | Weekly pass: links checked, new page indexed, no contradictions found; Jason Liu search found no direct post, still TODO
 ## [2026-11-09] ingest | Jason Liu: Systematically Improving RAG, Only 6 RAG evals; Lilian Weng: LLM-Powered Autonomous Agents (Andrew Ng skipped, still blocked)
+## [2026-11-10] ingest | Dan Shipper / Every: compound engineering; Simon Willison: linear walkthroughs (Andrew Ng skipped, still blocked)

@@ -2,7 +2,7 @@
 
 **Who:** Co-creator of Django, creator of Datasette and the `llm` CLI, prolific independent blogger on practical LLM use (simonwillison.net). Coined "prompt injection" and the "lethal trifecta" for agent security.
 **Why credible:** Builds and publishes daily, documents his real prompts and failures, discloses sponsorships.
-**Ingested:** 2026-10-30 (guide contents); 2026-10-30 (red/green TDD, first-run-the-tests, lethal trifecta read from primary pages); 2026-11-02 (subagents chapter)
+**Ingested:** 2026-10-30 (guide contents); 2026-10-30 (red/green TDD, first-run-the-tests, lethal trifecta read from primary pages); 2026-11-02 (subagents chapter); 2026-11-10 (linear walkthroughs)
 **Related:** [Core concepts](../concepts/core-concepts.md), [Karpathy](andrej-karpathy.md)
 
 ## Agentic Engineering Patterns (guide, started Feb 2026)
@@ -32,6 +32,8 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 
 - **Anti-pattern: inflicting unreviewed code on collaborators.** Opening a PR of agent-generated code you have not reviewed or tested makes reviewers the first line of quality control, and they could have prompted an agent themselves. Before asking for review: it works and you are confident of that; it is small (agents can split work into separate commits); it explains the goal and links issues; you have read any agent-written description. Include evidence of your own review such as manual-testing notes, comments on key choices, or screenshots/video.
 
+- **Linear walkthroughs:** to understand unfamiliar or vibe-coded code, have the agent read the repo and write a structured Markdown walkthrough. It should pull code with shell commands (via his Showboat `exec`/`note` tools) rather than retyping snippets, so nothing is hallucinated. His example: a SwiftUI app he never read became a walkthrough that taught him the ecosystem. He argues this offsets the worry that LLMs slow skill-building.
+
 ## Security: the lethal trifecta (primary post, Jun 2025)
 - Three capabilities that are dangerous together: access to private data, exposure to untrusted content, and a way to send data out. With all three, an attacker can instruct the agent to leak the data.
 - Root cause: LLMs cannot reliably separate operator instructions from instructions embedded in content they read.
@@ -45,10 +47,11 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 - https://simonwillison.net/guides/agentic-engineering-patterns/agentic-manual-testing/
 - https://simonwillison.net/guides/agentic-engineering-patterns/subagents/
 - https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/
+- https://simonwillison.net/guides/agentic-engineering-patterns/linear-walkthroughs/
 - https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
 - https://lennysnewsletter.com/p/an-ai-state-of-the-union
 
 ## Still to ingest
-- Remaining guide chapters (linear walkthroughs; the anti-patterns page currently shows only one anti-pattern)
+- Remaining guide chapters (interactive explanations; the anti-patterns page currently shows only one anti-pattern)
 - Follow-up trifecta posts (CaMeL, design patterns paper)
 - His yearly LLM review posts

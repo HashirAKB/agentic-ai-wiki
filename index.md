@@ -20,6 +20,7 @@ Read this first. One line per page. Updated on every ingest.
 - [Harrison Chase / LangChain](wiki/people/harrison-chase.md) - context engineering for agents: write, select, compress, isolate; context failure modes; trace before tuning
 - [Addy Osmani](wiki/people/addy-osmani.md) - owning the outer loop (quality, verdict, answerability), monthly audit of agent files, agentic skill decay
 - [Jason Liu](wiki/people/jason-liu.md) - systematically improving RAG (synthetic data, query segmentation, specific feedback), six RAG evals
+- [Dan Shipper / Every](wiki/people/dan-shipper.md) - compound engineering loop: plan, work, assess, compound; 80% of effort on planning and review
 - [Lilian Weng](wiki/people/lilian-weng.md) - LLM-powered agents: planning, memory, tool use, known limits (2023 survey)
 
 ## Concepts

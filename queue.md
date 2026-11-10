@@ -3,7 +3,7 @@
 Research one or two items per daily run, top of the list first. Mark DONE with the date; leave a note on partially done items. Add newly found credible sources at the right priority.
 
 ## Priority 1: deepen existing people (primary sources)
-1. PARTIAL (2026-11-03; red/green TDD, first-run-tests, trifecta, agentic manual testing, subagents, anti-patterns done; left: linear walkthroughs, follow-up trifecta posts) - Simon Willison: guide chapters in full (red/green TDD, first run the tests, subagents, anti-patterns, agentic manual testing) and his lethal trifecta post
+1. PARTIAL (2026-11-03; red/green TDD, first-run-tests, trifecta, agentic manual testing, subagents, anti-patterns done; linear walkthroughs done 2026-11-10; left: follow-up trifecta posts) - Simon Willison: guide chapters in full (red/green TDD, first run the tests, subagents, anti-patterns, agentic manual testing) and his lethal trifecta post
 2. PARTIAL (2026-11-03; Building effective agents, Writing tools, Effective harnesses, multi-agent research system, Demystifying evals done; Code execution with MCP done 2026-11-04) - Anthropic Engineering
 3. PARTIAL (2026-10-31; best-practices docs done) - Boris Cherny: original X threads (Jan 2026, X blocked), docs on hooks/subagents/skills
 4. PARTIAL (2026-10-31; Dwarkesh first ~100k chars done) - Karpathy: Dwarkesh remainder; How I use LLMs video; Animals vs Ghosts; Vibe coding MenuGen; nanochat/microGPT
@@ -18,7 +18,7 @@ Research one or two items per daily run, top of the list first. Mark DONE with t
 11. PARTIAL (2026-11-08; Own the Outer Loop, Audit your Agent files, Agentic Skill Decay done; left: Software Factories, Loop Engineering, Agent-Era Career, Brownfield) - Addy Osmani
 12. PARTIAL (2026-11-09; Systematically Improving RAG, Only 6 RAG evals done; left: grep vs embeddings, no multi-agents, Instructor, career advice) - Jason Liu
 13. PARTIAL (2026-11-09; LLM-Powered Autonomous Agents done; left: later posts) - Lilian Weng
-14. TODO - Dan Shipper / Every: compounding engineering
+14. PARTIAL (2026-11-10; Every compound engineering guide done; left: plugin README (docs 404), Klaassen posts) - Dan Shipper / Every: compounding engineering
 
 ## Priority 3: career and market
 15. TODO - Agentic AI hiring signals in India (Kochi, Bangalore, remote): what job descriptions ask for, take-home formats
