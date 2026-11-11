@@ -22,6 +22,8 @@ Read this first. One line per page. Updated on every ingest.
 - [Jason Liu](wiki/people/jason-liu.md) - systematically improving RAG (synthetic data, query segmentation, specific feedback), six RAG evals
 - [Dan Shipper / Every](wiki/people/dan-shipper.md) - compound engineering loop: plan, work, assess, compound; 80% of effort on planning and review
 - [Lilian Weng](wiki/people/lilian-weng.md) - LLM-powered agents: planning, memory, tool use, known limits (2023 survey)
+- [Drew Breunig](wiki/people/drew-breunig.md) - four context failure modes with studies, six fixes (tool loadout, quarantine, pruning, summarization, offloading)
+- [Walden Yan / Cognition](wiki/people/walden-yan.md) - don't build multi-agents: share full context, actions carry implicit decisions, compression model
 
 ## Concepts
 - [Core concepts](wiki/concepts/core-concepts.md) - agentic engineering, context engineering, verification loops, verifiability, partial autonomy, compounding engineering, evals, agent-native surfaces, lethal trifecta, workflows vs agents, tool design, deterministic vs non-deterministic instructions, long-running agents, subagents and multi-agent systems, code execution over tool calls

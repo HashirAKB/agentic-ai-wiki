@@ -35,3 +35,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-10] ingest | Dan Shipper / Every: compound engineering; Simon Willison: linear walkthroughs (Andrew Ng skipped, still blocked)
 ## [2026-11-10] applied | Approved P1 (diagnose long-session drift with context failure modes), saved as a preference
 ## [2026-11-10] applied | Approved P2 (monthly audit of CLAUDE.md, preferences and skills), saved as a preference
+## [2026-11-11] ingest | Drew Breunig: How Contexts Fail / How to Fix Your Context; Walden Yan (Cognition): Don't Build Multi-Agents (Andrew Ng skipped, still blocked)

@@ -20,4 +20,4 @@ Source: https://www.langchain.com/blog/context-engineering-for-agents
 - Terminology: Anthropic frames the same ideas as an attention budget; the write/select/compress/isolate split is the team's own taxonomy.
 
 ## Still to ingest
-- Harrison Chase's own posts and talks on agent architectures; LangGraph docs; Drew Breunig's long-context failure modes post; Cognition's multi-agent critique.
+- Harrison Chase's own posts and talks on agent architectures; LangGraph docs; (Drew Breunig and Cognition are now ingested: see [Drew Breunig](drew-breunig.md), [Walden Yan](walden-yan.md).)

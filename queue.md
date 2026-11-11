@@ -14,7 +14,7 @@ Research one or two items per daily run, top of the list first. Mark DONE with t
 7. PARTIAL (2026-11-05; agents post done; left: AI Engineering book themes, eval/RAG posts) - Chip Huyen
 8. PARTIAL (2026-11-06; Patterns for LLM systems done; left: Applied LLMs lessons, eval posts) - Eugene Yan
 9. TODO (2026-11-07: X returned 402 too; 2026-11-06: deeplearning.ai returned 403 and only secondary summaries were found; try other mirrors or his talks) - Andrew Ng: agentic design patterns (reflection, tool use, planning, multi-agent)
-10. PARTIAL (2026-11-07; Context Engineering for Agents post done; left: his own posts/talks, Drew Breunig long-context failures, Cognition multi-agent critique) - Harrison Chase (LangChain/LangGraph)
+10. PARTIAL (2026-11-07; Context Engineering for Agents post done; Drew Breunig and Cognition critique done 2026-11-11 as separate pages; left: his own posts/talks, later Cognition and Breunig posts) - Harrison Chase (LangChain/LangGraph)
 11. PARTIAL (2026-11-08; Own the Outer Loop, Audit your Agent files, Agentic Skill Decay done; left: Software Factories, Loop Engineering, Agent-Era Career, Brownfield) - Addy Osmani
 12. PARTIAL (2026-11-09; Systematically Improving RAG, Only 6 RAG evals done; left: grep vs embeddings, no multi-agents, Instructor, career advice) - Jason Liu
 13. PARTIAL (2026-11-09; LLM-Powered Autonomous Agents done; left: later posts) - Lilian Weng
