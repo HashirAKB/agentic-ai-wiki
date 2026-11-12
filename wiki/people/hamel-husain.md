@@ -28,5 +28,19 @@ Source: https://hamel.dev/blog/posts/evals/
 - Synthetic data: use an LLM to brainstorm realistic inputs, filter with your assertions and judge, then curate by hand. Fine-tuning suits style, syntax and rules; RAG suits fresh facts.
 - Pitfalls: prompt whack-a-mole, vibe checks only, skipping unit tests, generic frameworks, buying tools too early, too little data reading, treating evals as done.
 
+## Using LLM-as-a-Judge: critique shadowing (ingested 2026-11-12)
+Source: https://hamel.dev/blog/posts/llm-judge/
+1. Name one principal domain expert (founder or CEO in small firms; a solo dev must be honest about their expertise). Not a proxy such as a manager.
+2. Build a dataset along features, scenarios and personas, mixing logs with synthetic user inputs (the LLM generates inputs only, never AI responses). Generate until no new failure modes appear.
+3. The expert answers "did the AI achieve the desired outcome?" as pass/fail plus a detailed written critique usable as a few-shot example, with all context on one screen. About 30 examples to start; about 100 per failure mode to validate a judge.
+4. Fix obvious errors first, then re-review.
+5. Build the judge only after seeing data (criteria drift: writing criteria and reading outputs shape each other). Iterate the prompt against the expert's labels; report true positive and true negative rates, since an always-Pass judge shows 95% agreement when failures are rare.
+6. Validate like a classifier: train split (10-20%) supplies few-shot examples, dev split (40-45%) for prompt revision, test split (40-45%) used once with a frozen prompt.
+7. Run on unseen data, classify failures into root causes, fix, repeat. Build specialized judges only for persistent failure modes; code assertions suffice for some. Write a test for every fixed error.
+- Judge model: the most capable you can afford; humans can shrink to sampling but not leave. Rerun the process after model updates. The judge's main value is pushing people to read their data.
+
+## Links
+- https://hamel.dev/blog/posts/llm-judge/
+
 ## Still to ingest
-- "Creating an LLM-as-a-judge", "A field guide to rapidly improving AI products"
+- "A field guide to rapidly improving AI products"

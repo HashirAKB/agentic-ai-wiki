@@ -39,7 +39,15 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 - Root cause: LLMs cannot reliably separate operator instructions from instructions embedded in content they read.
 - Mitigations: avoid combining the three (the only dependable protection for users); after an agent ingests untrusted input, constrain it so that input cannot trigger consequential actions; architectural approaches such as Google DeepMind's CaMeL. He argues that guardrail products with a "95%" catch rate are not good enough, and that mixing MCP tools makes accidental trifectas easy.
 
+## Security follow-up: Rule of Two and adaptive attacks (primary post, 2025-11-02)
+Source: https://simonwillison.net/2025/Nov/2/new-prompt-injection-papers/
+- Meta's "Agents Rule of Two": in one session an agent should have at most two of (A) untrusted inputs, (B) access to sensitive systems or private data, (C) ability to change state or communicate externally. If a task needs all three, no autonomous run: use a fresh context or supervision such as human approval.
+- Willison's take: a clearer way to explain the risk than his trifecta, and wider in scope. The trifecta covers only data exfiltration; state changes triggered by untrusted input are a separate harm.
+- He objected to Meta's first diagram calling untrusted input plus state change "safe", since harm needs no private data. Meta replied that B means any sensitive system, so a sandboxed agent isolated from anything that matters can legitimately drop B.
+- Paper "The Attacker Moves Second" (Oct 2025, authors from OpenAI, Anthropic and Google DeepMind): adaptive attacks (gradient, RL, search, human red-teaming) beat all 12 published defenses, most above 90% success, where the defenses had reported near zero on static attacks. His conclusion: system design, not filters, is the answer for now.
+
 ## Links
+- https://simonwillison.net/2025/Nov/2/new-prompt-injection-papers/
 - https://simonwillison.net/guides/agentic-engineering-patterns/
 - https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/
 - https://simonwillison.net/guides/agentic-engineering-patterns/red-green-tdd/
@@ -53,5 +61,5 @@ A book-shaped, growing guide on getting good results from coding agents like Cla
 
 ## Still to ingest
 - Remaining guide chapters (interactive explanations; the anti-patterns page currently shows only one anti-pattern)
-- Follow-up trifecta posts (CaMeL, design patterns paper)
+- CaMeL and the design-patterns-for-securing-agents paper posts
 - His yearly LLM review posts
