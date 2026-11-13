@@ -3,7 +3,7 @@
 Research one or two items per daily run, top of the list first. Mark DONE with the date; leave a note on partially done items. Add newly found credible sources at the right priority.
 
 ## Priority 1: deepen existing people (primary sources)
-1. PARTIAL (2026-11-03; red/green TDD, first-run-tests, trifecta, agentic manual testing, subagents, anti-patterns done; linear walkthroughs done 2026-11-10; Rule of Two / adaptive attacks done 2026-11-12; left: CaMeL and design-patterns posts) - Simon Willison: guide chapters in full (red/green TDD, first run the tests, subagents, anti-patterns, agentic manual testing) and his lethal trifecta post
+1. PARTIAL (2026-11-03; red/green TDD, first-run-tests, trifecta, agentic manual testing, subagents, anti-patterns done; linear walkthroughs done 2026-11-10; Rule of Two / adaptive attacks done 2026-11-12; CaMeL and design-patterns posts done 2026-11-13; left: interactive explanations, yearly reviews) - Simon Willison: guide chapters in full (red/green TDD, first run the tests, subagents, anti-patterns, agentic manual testing) and his lethal trifecta post
 2. PARTIAL (2026-11-03; Building effective agents, Writing tools, Effective harnesses, multi-agent research system, Demystifying evals done; Code execution with MCP done 2026-11-04) - Anthropic Engineering
 3. PARTIAL (2026-10-31; best-practices docs done) - Boris Cherny: original X threads (Jan 2026, X blocked), docs on hooks/subagents/skills
 4. PARTIAL (2026-10-31; Dwarkesh first ~100k chars done) - Karpathy: Dwarkesh remainder; How I use LLMs video; Animals vs Ghosts; Vibe coding MenuGen; nanochat/microGPT

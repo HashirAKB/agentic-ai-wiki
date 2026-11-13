@@ -2,7 +2,7 @@
 
 **Who:** Co-creator of Django, creator of Datasette and the `llm` CLI, prolific independent blogger on practical LLM use (simonwillison.net). Coined "prompt injection" and the "lethal trifecta" for agent security.
 **Why credible:** Builds and publishes daily, documents his real prompts and failures, discloses sponsorships.
-**Ingested:** 2026-10-30 (guide contents); 2026-10-30 (red/green TDD, first-run-the-tests, lethal trifecta read from primary pages); 2026-11-02 (subagents chapter); 2026-11-10 (linear walkthroughs)
+**Ingested:** 2026-10-30 (guide contents); 2026-10-30 (red/green TDD, first-run-the-tests, lethal trifecta read from primary pages); 2026-11-02 (subagents chapter); 2026-11-10 (linear walkthroughs); 2026-11-13 (CaMeL, design patterns)
 **Related:** [Core concepts](../concepts/core-concepts.md), [Karpathy](andrej-karpathy.md)
 
 ## Agentic Engineering Patterns (guide, started Feb 2026)
@@ -46,7 +46,16 @@ Source: https://simonwillison.net/2025/Nov/2/new-prompt-injection-papers/
 - He objected to Meta's first diagram calling untrusted input plus state change "safe", since harm needs no private data. Meta replied that B means any sensitive system, so a sandboxed agent isolated from anything that matters can legitimately drop B.
 - Paper "The Attacker Moves Second" (Oct 2025, authors from OpenAI, Anthropic and Google DeepMind): adaptive attacks (gradient, RL, search, human red-teaming) beat all 12 published defenses, most above 90% success, where the defenses had reported near zero on static attacks. His conclusion: system design, not filters, is the answer for now.
 
+## Security: CaMeL and design patterns (primary posts, Apr and Jun 2025)
+Sources: https://simonwillison.net/2025/Apr/11/camel/ and https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/
+- **Critique of AI-based defenses:** classifiers are probabilistic, and in application security a 99% catch rate is failing because attackers need only the remainder.
+- **Dual LLM (his 2023 idea):** a privileged LLM with tools sees only trusted input; a quarantined LLM reads untrusted content and returns opaque variables. DeepMind found a gap: the quarantined model can still be tricked into returning an attacker's value (e.g. a wrong email address) that then gets used.
+- **CaMeL (DeepMind):** the privileged model writes a restricted-Python plan; a custom interpreter runs it, tags each value with provenance and allowed readers, and checks policies before actions (e.g. send email only to trusted recipients, else ask the user). He calls it the first mitigation he has seen that does not just add more AI. Caveats: users must write and maintain policies, and frequent approval prompts cause fatigue.
+- **Design-patterns paper (11 authors, IBM, ETH, Google, Microsoft, others):** general agents are unlikely to be reliably safe, so constrain them. Six patterns: action-selector, plan-then-execute, LLM map-reduce, dual LLM, code-then-execute, context minimization (details in [Core concepts](../concepts/core-concepts.md)). Guiding rule: once an agent has ingested untrusted input, that input must not be able to trigger consequential actions. He endorses treating any exposure to malicious tokens as attacker control of later output and tool calls, and doubts that strict format limits (e.g. 30-character method names) stop a determined attacker.
+
 ## Links
+- https://simonwillison.net/2025/Apr/11/camel/
+- https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/
 - https://simonwillison.net/2025/Nov/2/new-prompt-injection-papers/
 - https://simonwillison.net/guides/agentic-engineering-patterns/
 - https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/
@@ -61,5 +70,4 @@ Source: https://simonwillison.net/2025/Nov/2/new-prompt-injection-papers/
 
 ## Still to ingest
 - Remaining guide chapters (interactive explanations; the anti-patterns page currently shows only one anti-pattern)
-- CaMeL and the design-patterns-for-securing-agents paper posts
 - His yearly LLM review posts
