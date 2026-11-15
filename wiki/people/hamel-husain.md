@@ -39,8 +39,18 @@ Source: https://hamel.dev/blog/posts/llm-judge/
 7. Run on unseen data, classify failures into root causes, fix, repeat. Build specialized judges only for persistent failure modes; code assertions suffice for some. Write a test for every fixed error.
 - Judge model: the most capable you can afford; humans can shrink to sampling but not leave. Rerun the process after model updates. The judge's main value is pushing people to read their data.
 
+## A field guide to rapidly improving AI products (ingested 2026-11-15)
+Source: https://hamel.dev/blog/posts/field-guide/ (Mar 2025; also republished by [O'Reilly](https://www.oreilly.com/radar/a-field-guide-to-rapidly-improving-ai-products/))
+- Teams chase tools and generic metrics; instead read real conversations, note failures, group them into a taxonomy, count, and fix the top categories (in one case three issues caused over 60% of problems).
+- A custom data viewer (full context on one screen, one-click pass/fail, notes, filters, keyboard shortcuts) is the highest-value investment; AI-assisted coding builds one in hours, and a spreadsheet is a fine start.
+- Let domain experts edit prompts directly, ideally in an admin mode inside the real product. Talk to them in concrete capabilities, not buzzwords like "agent" or "RAG".
+- Bootstrap evals with synthetic inputs (never expected outputs) across features, scenarios and personas, grounded in real data; check each case triggers its intended scenario.
+- Evals drift as reviewers see more outputs, so treat criteria as living. Binary judgments plus written critiques; use critiques as few-shot examples for judges; recheck judges against human labels (one team passed 90% agreement after three rounds).
+- Roadmaps: plan around experiments, not features. Use a capability funnel (valid output up to fully solving the problem), time-box exploration with decision points, share failures, and count experiments run as the progress metric.
+
 ## Links
 - https://hamel.dev/blog/posts/llm-judge/
+- https://hamel.dev/blog/posts/field-guide/
 
 ## Still to ingest
-- "A field guide to rapidly improving AI products"
+- Later parts of the series on error analysis and sustained improvement loops

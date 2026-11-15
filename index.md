@@ -10,9 +10,9 @@ Read this first. One line per page. Updated on every ingest.
 
 ## People
 - [Andrej Karpathy](wiki/people/andrej-karpathy.md) - agentic engineering, coding-agent failure modes, declarative goals, verifiability, context engineering, LLM Wiki, ramble sessions, output formats, hiring view, Dwarkesh interview (decade of agents, why agents failed on nanochat)
-- [Simon Willison](wiki/people/simon-willison.md) - Agentic Engineering Patterns guide (red/green TDD, first run the tests, hoarding, anti-patterns, subagents, agentic manual testing, subagents, unreviewed-PR anti-pattern), lethal trifecta (primary post), Rule of Two and adaptive-attack paper, CaMeL and six design patterns for injection-resistant agents
+- [Simon Willison](wiki/people/simon-willison.md) - Agentic Engineering Patterns guide (red/green TDD, first run the tests, hoarding, anti-patterns, subagents, agentic manual testing, subagents, unreviewed-PR anti-pattern), lethal trifecta (primary post), Rule of Two and adaptive-attack paper, CaMeL and six design patterns for injection-resistant agents, cognitive debt and interactive explanations
 - [Anthropic Engineering](wiki/people/anthropic-engineering.md) - context as a finite attention budget, agents as tools in a loop, workflow patterns, tool design, compaction, notes, sub-agents, multi-agent research system, long-running harness (feature list, progress file, one feature per session), agent evals (graders, pass@k vs pass^k, outcome grading), code execution with MCP
-- [Hamel Husain](wiki/people/hamel-husain.md) - evals: error analysis first, binary pass/fail, one domain expert decides, validated LLM judges, three levels of evals, critique shadowing recipe for judges
+- [Hamel Husain](wiki/people/hamel-husain.md) - evals: error analysis first, binary pass/fail, one domain expert decides, validated LLM judges, three levels of evals, critique shadowing recipe for judges, field guide (data viewer, synthetic data, experiment roadmaps)
 - [Boris Cherny](wiki/people/boris-cherny.md) - Claude Code: parallel sessions, plan first, shared CLAUDE.md, compounding engineering, slash commands, verification subagents, official best-practices docs (hooks vs CLAUDE.md, pass/fail checks, interview-to-spec)
 - [swyx](wiki/people/swyx.md) - AI engineer role definition: product-focused, prompt-first, owns data and evals
 - [Chip Huyen](wiki/people/chip-huyen.md) - agents: tool types, plan-then-execute, reflection, failure modes, how to evaluate agents
@@ -26,7 +26,7 @@ Read this first. One line per page. Updated on every ingest.
 - [Walden Yan / Cognition](wiki/people/walden-yan.md) - don't build multi-agents: share full context, actions carry implicit decisions, compression model
 
 ## Concepts
-- [Core concepts](wiki/concepts/core-concepts.md) - agentic engineering, context engineering, verification loops, verifiability, partial autonomy, compounding engineering, evals, agent-native surfaces, lethal trifecta, workflows vs agents, tool design, deterministic vs non-deterministic instructions, long-running agents, subagents and multi-agent systems, code execution over tool calls
+- [Core concepts](wiki/concepts/core-concepts.md) - agentic engineering, context engineering, verification loops, verifiability, partial autonomy, compounding engineering, evals, agent-native surfaces, lethal trifecta, workflows vs agents, tool design, deterministic vs non-deterministic instructions, long-running agents, subagents and multi-agent systems, code execution over tool calls, cognitive debt
 
 ## Tools radar
 - [Seen tools](radar/seen.md) - everything suggested so far

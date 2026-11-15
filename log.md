@@ -38,3 +38,5 @@ Append-only. Newest at the bottom.
 ## [2026-11-11] ingest | Drew Breunig: How Contexts Fail / How to Fix Your Context; Walden Yan (Cognition): Don't Build Multi-Agents (Andrew Ng skipped, still blocked)
 ## [2026-11-12] ingest | Simon Willison: Rule of Two and "The Attacker Moves Second"; Hamel Husain: LLM-as-a-Judge critique shadowing (Andrew Ng skipped, still blocked)
 ## [2026-11-13] ingest | Simon Willison: CaMeL and the prompt-injection design patterns paper (Andrew Ng skipped, still blocked)
+## [2026-11-15] ingest | Hamel Husain: field guide to rapidly improving AI products; Simon Willison: interactive explanations (cognitive debt)
+## [2026-11-15] lint | Weekly pass: links checked, index and queue updated, no contradictions or orphans found

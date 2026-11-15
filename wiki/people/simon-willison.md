@@ -53,7 +53,14 @@ Sources: https://simonwillison.net/2025/Apr/11/camel/ and https://simonwillison.
 - **CaMeL (DeepMind):** the privileged model writes a restricted-Python plan; a custom interpreter runs it, tags each value with provenance and allowed readers, and checks policies before actions (e.g. send email only to trusted recipients, else ask the user). He calls it the first mitigation he has seen that does not just add more AI. Caveats: users must write and maintain policies, and frequent approval prompts cause fatigue.
 - **Design-patterns paper (11 authors, IBM, ETH, Google, Microsoft, others):** general agents are unlikely to be reliably safe, so constrain them. Six patterns: action-selector, plan-then-execute, LLM map-reduce, dual LLM, code-then-execute, context minimization (details in [Core concepts](../concepts/core-concepts.md)). Guiding rule: once an agent has ingested untrusted input, that input must not be able to trigger consequential actions. He endorses treating any exposure to malicious tokens as attacker control of later output and tool calls, and doubts that strict format limits (e.g. 30-character method names) stop a determined attacker.
 
+## Interactive explanations and cognitive debt (ingested 2026-11-15)
+Source: https://simonwillison.net/guides/agentic-engineering-patterns/interactive-explanations/
+- **Cognitive debt:** the gap that opens when you no longer understand agent-written code. Harmless for trivial glue, costly for an application's core, where a black box slows planning like technical debt does.
+- **Remedy:** ask the agent for an interactive or animated explanation of the confusing part. His example: a word-cloud CLI whose spiral placement step stayed unclear after a text report and a linear walkthrough; an animated HTML page made it click.
+- **Design tips:** reuse an existing walkthrough as source material; add pause, speed and single-step controls; store input in the URL fragment so it can be reloaded and shared. Works on your own code or others'.
+
 ## Links
+- https://simonwillison.net/guides/agentic-engineering-patterns/interactive-explanations/
 - https://simonwillison.net/2025/Apr/11/camel/
 - https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/
 - https://simonwillison.net/2025/Nov/2/new-prompt-injection-papers/
@@ -69,5 +76,5 @@ Sources: https://simonwillison.net/2025/Apr/11/camel/ and https://simonwillison.
 - https://lennysnewsletter.com/p/an-ai-state-of-the-union
 
 ## Still to ingest
-- Remaining guide chapters (interactive explanations; the anti-patterns page currently shows only one anti-pattern)
+- Remaining guide chapters (the anti-patterns page currently shows only one anti-pattern)
 - His yearly LLM review posts
