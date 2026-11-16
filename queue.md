@@ -3,10 +3,10 @@
 Research one or two items per daily run, top of the list first. Mark DONE with the date; leave a note on partially done items. Add newly found credible sources at the right priority.
 
 ## Priority 1: deepen existing people (primary sources)
-1. PARTIAL (2026-11-03; red/green TDD, first-run-tests, trifecta, agentic manual testing, subagents, anti-patterns done; linear walkthroughs done 2026-11-10; Rule of Two / adaptive attacks done 2026-11-12; CaMeL and design-patterns posts done 2026-11-13; interactive explanations done 2026-11-15; left: yearly reviews) - Simon Willison: guide chapters in full (red/green TDD, first run the tests, subagents, anti-patterns, agentic manual testing) and his lethal trifecta post
+1. PARTIAL (2026-11-03; red/green TDD, first-run-tests, trifecta, agentic manual testing, subagents, anti-patterns done; linear walkthroughs done 2026-11-10; Rule of Two / adaptive attacks done 2026-11-12; CaMeL and design-patterns posts done 2026-11-13; interactive explanations done 2026-11-15; 2025 year in LLMs done 2026-11-16; left: 2023/2024 reviews) - Simon Willison: guide chapters in full (red/green TDD, first run the tests, subagents, anti-patterns, agentic manual testing) and his lethal trifecta post
 2. PARTIAL (2026-11-03; Building effective agents, Writing tools, Effective harnesses, multi-agent research system, Demystifying evals done; Code execution with MCP done 2026-11-04) - Anthropic Engineering
 3. PARTIAL (2026-10-31; best-practices docs done) - Boris Cherny: original X threads (Jan 2026, X blocked), docs on hooks/subagents/skills
-4. PARTIAL (2026-10-31; Dwarkesh first ~100k chars done) - Karpathy: Dwarkesh remainder; How I use LLMs video; Animals vs Ghosts; Vibe coding MenuGen; nanochat/microGPT
+4. PARTIAL (2026-10-31; Dwarkesh first ~100k chars done; next section 2026-11-16, RL/cognitive core still unread) - Karpathy: Dwarkesh remainder; How I use LLMs video; Animals vs Ghosts; Vibe coding MenuGen; nanochat/microGPT
 5. PARTIAL (2026-11-04; "Your AI product needs evals" done; LLM-as-a-judge guide done 2026-11-12; field guide done 2026-11-15; left: later series parts) - Hamel Husain: LLM-as-judge guide, field guide to improving AI products
 
 ## Priority 2: new credible practitioners

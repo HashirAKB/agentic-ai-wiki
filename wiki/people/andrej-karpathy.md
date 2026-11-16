@@ -44,12 +44,20 @@
 - Learning path: Zero to Hero (micrograd to GPT), Deep Dive into LLMs, How I use LLMs, microGPT.
 
 ## Dwarkesh Patel interview, Oct 2025 (2026-10-31)
-Source: [Dwarkesh transcript](https://www.dwarkesh.com/p/andrej-karpathy) (first ~100k characters read; the rest unread).
+Source: [Dwarkesh transcript](https://www.dwarkesh.com/p/andrej-karpathy) (first ~100k characters read, then the next section; RL and cognitive-core passages still unread).
 - **"Decade of agents", not year:** agents lack intelligence, multimodality, reliable computer use and continual learning. The problems are tractable but hard, so he expects gradual progress along the autonomy slider, not a jump.
 - **Three modes of coding:** by hand, autocomplete while you stay architect, and agents. He mostly used autocomplete, because pointing at a code location and typing a few characters conveys more than a paragraph of English.
 - **Why agents failed on nanochat:** they defaulted to common internet conventions (pushing PyTorch's DDP wrapper he had deliberately replaced), over-defended with try/except, used deprecated APIs and bloated the code. Weak on novel code; good on boilerplate and well-represented patterns.
 - **When agents did help:** work with a reference implementation and tests to check against (e.g. a Rust tokenizer against a Python reference). Fits the verification-loop theme.
 - **Learning:** build it from scratch rather than copy-pasting; building exposes gaps that reading hides. Code first, explain after.
+
+### Dwarkesh interview, second half (ingested 2026-11-16)
+Source: same transcript, remaining sections (RL and cognitive-core passages were not in the part fetched).
+- **March of nines:** from self-driving, each extra nine of reliability costs about as much work as the last; demos mislead, and software with costly failures behaves the same.
+- **No culture yet:** LLMs lack a persistent shared body of knowledge passed between models; a scratchpad or written notes is a starting point (the idea behind this wiki). Self-play, one model posing problems for another, is promising but little tried.
+- **Cognitively immature:** strong recall and polish, but without an experienced practitioner's judgment.
+- **Growth:** expects gradual diffusion on trend, not a sudden regime change.
+- **Education:** AI is best used now to produce course material; humans still design the curriculum. Learn by projects and by explaining ideas.
 
 ## Links
 - https://www.dwarkesh.com/p/andrej-karpathy
@@ -64,7 +72,7 @@ Source: [Dwarkesh transcript](https://www.dwarkesh.com/p/andrej-karpathy) (first
 - https://karpathy.ai
 
 ## Still to ingest
-- Dwarkesh podcast: remaining ~70k characters (RL, cognitive core, education)
+- Dwarkesh podcast: RL, cognitive core and model-collapse passages
 - How I use LLMs video (full)
 - Animals vs Ghosts, The space of minds, Power to the people, Vibe coding MenuGen
 - nanochat / microGPT repos

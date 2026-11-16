@@ -59,6 +59,16 @@ Source: https://simonwillison.net/guides/agentic-engineering-patterns/interactiv
 - **Remedy:** ask the agent for an interactive or animated explanation of the confusing part. His example: a word-cloud CLI whose spiral placement step stayed unclear after a text report and a linear walkthrough; an animated HTML page made it click.
 - **Design tips:** reuse an existing walkthrough as source material; add pause, speed and single-step controls; store input in the URL fragment so it can be reloaded and shared. Works on your own code or others'.
 
+## 2025 year in LLMs (primary post, ingested 2026-11-16)
+Source: [The year in LLMs](https://simonwillison.net/2025/Dec/31/the-year-in-llms/)
+- Reasoning models pay off mainly when paired with tools: they can trace a bug through a codebase by reading and running code.
+- Agents are LLMs running tools in a loop toward a goal; coding and search are where this works best. Async coding agents in cloud sandboxes also limit blast radius.
+- Skipping approval prompts ("YOLO mode") is tempting; a streak without incidents is not safety, and normalised risk is how serious incidents happen.
+- Prompt injection remains unsolved; break at least one leg of the trifecta.
+- For coding agents, CLI tools and lightweight skill files often beat heavy MCP integrations.
+- Existing language-agnostic conformance suites give agents a test target to iterate against.
+- Local models are not yet reliable enough for long autonomous coding runs.
+
 ## Links
 - https://simonwillison.net/guides/agentic-engineering-patterns/interactive-explanations/
 - https://simonwillison.net/2025/Apr/11/camel/
@@ -73,8 +83,9 @@ Source: https://simonwillison.net/guides/agentic-engineering-patterns/interactiv
 - https://simonwillison.net/guides/agentic-engineering-patterns/anti-patterns/
 - https://simonwillison.net/guides/agentic-engineering-patterns/linear-walkthroughs/
 - https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
+- https://simonwillison.net/2025/Dec/31/the-year-in-llms/
 - https://lennysnewsletter.com/p/an-ai-state-of-the-union
 
 ## Still to ingest
 - Remaining guide chapters (the anti-patterns page currently shows only one anti-pattern)
-- His yearly LLM review posts
+- His other yearly LLM review posts (2023, 2024)

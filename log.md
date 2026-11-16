@@ -40,3 +40,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-13] ingest | Simon Willison: CaMeL and the prompt-injection design patterns paper (Andrew Ng skipped, still blocked)
 ## [2026-11-15] ingest | Hamel Husain: field guide to rapidly improving AI products; Simon Willison: interactive explanations (cognitive debt)
 ## [2026-11-15] lint | Weekly pass: links checked, index and queue updated, no contradictions or orphans found
+## [2026-11-16] ingest | Karpathy: Dwarkesh interview second section; Simon Willison: 2025 year in LLMs (Andrew Ng skipped, still blocked)
