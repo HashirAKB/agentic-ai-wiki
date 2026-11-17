@@ -2,7 +2,7 @@
 
 **Who:** Co-creator of Django, creator of Datasette and the `llm` CLI, prolific independent blogger on practical LLM use (simonwillison.net). Coined "prompt injection" and the "lethal trifecta" for agent security.
 **Why credible:** Builds and publishes daily, documents his real prompts and failures, discloses sponsorships.
-**Ingested:** 2026-10-30 (guide contents); 2026-10-30 (red/green TDD, first-run-the-tests, lethal trifecta read from primary pages); 2026-11-02 (subagents chapter); 2026-11-10 (linear walkthroughs); 2026-11-13 (CaMeL, design patterns)
+**Ingested:** 2026-10-30 (guide contents); 2026-10-30 (red/green TDD, first-run-the-tests, lethal trifecta read from primary pages); 2026-11-02 (subagents chapter); 2026-11-10 (linear walkthroughs); 2026-11-13 (CaMeL, design patterns); 2026-11-17 (2023 and 2024 reviews)
 **Related:** [Core concepts](../concepts/core-concepts.md), [Karpathy](andrej-karpathy.md)
 
 ## Agentic Engineering Patterns (guide, started Feb 2026)
@@ -69,6 +69,16 @@ Source: [The year in LLMs](https://simonwillison.net/2025/Dec/31/the-year-in-llm
 - Existing language-agnostic conformance suites give agents a test target to iterate against.
 - Local models are not yet reliable enough for long autonomous coding runs.
 
+## 2023 and 2024 year reviews (primary posts, ingested 2026-11-17)
+Sources: [Stuff we figured out about AI in 2023](https://simonwillison.net/2023/Dec/31/ai-in-2023/), [LLMs in 2024](https://simonwillison.net/2024/Dec/31/llms-in-2024/)
+- **Use models daily:** a few weeks of regular use is needed to learn a model's strengths and weaknesses; prompt tricks (e.g. offering tips) work inconsistently.
+- **Code is the strongest use:** output can be run, and a model that executes code can read its own errors and retry, which cuts hallucination.
+- **Gullibility is the core problem:** models believe whatever they are given; prompt injection is one case. Little progress by end of 2024.
+- **Evals are the key skill:** "vibes based development" is the 2023 failure mode; by 2024 he says automated eval suites let you adopt new models faster. He suggests test-driven prompt design (tests first, then a prompt that passes). Leaderboards like Chatbot Arena are a rough guide only.
+- **Agents (2024 view):** no shared definition, so ask what someone means; he was sceptical then. Compare with his 2025 review above, where agents-as-tools-in-a-loop work for coding and search.
+- **Costs and modality:** top-model prices fell sharply in 2024 (captioning 68,000 photos for under $2); multimodal input became common; Artifacts-style prompt-built apps spread.
+- **Local models:** GPT-4-class quality reached 64GB laptops in 2024.
+
 ## Links
 - https://simonwillison.net/guides/agentic-engineering-patterns/interactive-explanations/
 - https://simonwillison.net/2025/Apr/11/camel/
@@ -84,8 +94,9 @@ Source: [The year in LLMs](https://simonwillison.net/2025/Dec/31/the-year-in-llm
 - https://simonwillison.net/guides/agentic-engineering-patterns/linear-walkthroughs/
 - https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
 - https://simonwillison.net/2025/Dec/31/the-year-in-llms/
+- https://simonwillison.net/2024/Dec/31/llms-in-2024/
+- https://simonwillison.net/2023/Dec/31/ai-in-2023/
 - https://lennysnewsletter.com/p/an-ai-state-of-the-union
 
 ## Still to ingest
 - Remaining guide chapters (the anti-patterns page currently shows only one anti-pattern)
-- His other yearly LLM review posts (2023, 2024)
