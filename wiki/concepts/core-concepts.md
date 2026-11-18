@@ -37,6 +37,9 @@ When you stop understanding agent-written core code, planning slows. Pay it down
 ## Code execution over direct tool calls
 When many tools or large intermediate results are involved, let the agent write code against tools exposed as files: load tool definitions on demand, filter and loop in the sandbox, keep sensitive data out of the model's context. Costs a sandbox and its security work. Source: [Anthropic](../people/anthropic-engineering.md).
 
+## Skills and sandboxing
+Skills package instructions and scripts in a folder loaded by progressive disclosure (description always, body when relevant, linked files on demand); write them from observed failures and audit third-party ones. Sandboxing swaps per-action approval for enforced boundaries: filesystem plus network isolation together, with credentials kept outside. Anthropic reports 84% fewer prompts internally. Source: [Anthropic](../people/anthropic-engineering.md). Pairs with the enforced-vs-advice split below.
+
 ## Reviewing agent output before handing it on
 Sending unreviewed agent-generated code or text to collaborators shifts the verification work onto them. Verify it yourself, keep changes small, explain the goal, and show evidence of testing. Source: [Simon Willison](../people/simon-willison.md).
 

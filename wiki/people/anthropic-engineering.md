@@ -2,7 +2,7 @@
 
 **Who:** The team behind Claude, Claude Code and the Agent SDK, publishing how they build agents internally.
 **Why credible:** Primary source from a frontier lab, based on production systems.
-**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system); 2026-11-03 (Demystifying evals for AI agents)
+**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system); 2026-11-03 (Demystifying evals for AI agents); 2026-11-04 (Code execution with MCP); 2026-11-18 (Agent Skills, Claude Code sandboxing)
 **Related:** [Core concepts](../concepts/core-concepts.md)
 
 ## Effective context engineering for AI agents (Sep 2025)
@@ -59,6 +59,20 @@
 - State and skills: agents can save files to resume work and save working code as reusable functions; add a SKILL.md and it becomes a skill.
 - Caveat: needs a secure sandbox, resource limits and monitoring. Weigh that overhead against the token, cost and latency savings.
 
+## Equipping agents with Agent Skills (Oct 2025)
+- A skill is a directory with a `SKILL.md` (YAML frontmatter with `name` and `description`, then instructions) plus optional bundled files and scripts.
+- Progressive disclosure in three levels: name and description of every installed skill sit in the system prompt; the full `SKILL.md` loads only when the skill looks relevant; linked files (e.g. a `forms.md`) load only for the specific scenario. So bundled context is effectively unbounded.
+- Scripts can run without the script or its data entering context, which makes steps deterministic and cheaper than generating the same logic as tokens.
+- Authoring: start from evals (run agents on representative tasks, see where they struggle, add skills to close gaps); split a large `SKILL.md` and keep rarely combined contexts on separate paths; say whether a script is to be run or read; watch real trajectories and refine the description, since it drives triggering; ask the agent to record its successful approaches and mistakes into the skill.
+- Security: a malicious skill can leak data or take unintended actions, so install from trusted sources and audit bundled code, dependencies and any instruction to contact external hosts.
+- Stated direction: sharing tools for organizations, pairing skills with MCP servers (skills teach the multi-step workflow), and agents eventually writing and evaluating their own skills.
+
+## Beyond permission prompts: Claude Code sandboxing (Oct 2025)
+- Problem: per-action approval causes fatigue, so people stop reading prompts, and a prompt-injected agent with broad access is risky.
+- Design: OS-level sandbox (bubblewrap on Linux, seatbelt on macOS, no container overhead) with two layers that must both exist. Filesystem isolation limits read/write to the working directory; network isolation routes traffic through a proxy outside the sandbox that allows only approved domains. Without the network layer, a compromised agent can exfiltrate files such as SSH keys; without the filesystem layer, it can escape to the network.
+- Web version: sessions run in cloud sandboxes with git credentials kept outside. A proxy checks a scoped credential and the request (e.g. push only to the configured branch) and then attaches the real token.
+- Reported result: 84% fewer permission prompts in internal use (self-reported, not independently verified). The runtime is open source and can sandbox arbitrary agents and MCP servers; in Claude Code it is `/sandbox`.
+
 ## Links
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - https://www.anthropic.com/engineering/building-effective-agents
@@ -67,4 +81,6 @@
 - https://www.anthropic.com/engineering/multi-agent-research-system
 - https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
 - https://www.anthropic.com/engineering/code-execution-with-mcp
+- https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
+- https://www.anthropic.com/engineering/claude-code-sandboxing
 - https://www.anthropic.com/engineering
