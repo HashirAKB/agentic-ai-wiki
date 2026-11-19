@@ -43,3 +43,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-16] ingest | Karpathy: Dwarkesh interview second section; Simon Willison: 2025 year in LLMs (Andrew Ng skipped, still blocked)
 ## [2026-11-17] ingest | Simon Willison: 2023 and 2024 year-in-LLMs reviews (Andrew Ng skipped, still blocked)
 ## [2026-11-18] ingest | Anthropic: Agent Skills, Claude Code sandboxing (Andrew Ng skipped, still blocked)
+## [2026-11-19] ingest | Anthropic: Advanced tool use (tool search, programmatic tool calling, tool use examples) (Andrew Ng skipped, still blocked)

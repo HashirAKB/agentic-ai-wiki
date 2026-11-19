@@ -2,7 +2,7 @@
 
 **Who:** The team behind Claude, Claude Code and the Agent SDK, publishing how they build agents internally.
 **Why credible:** Primary source from a frontier lab, based on production systems.
-**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system); 2026-11-03 (Demystifying evals for AI agents); 2026-11-04 (Code execution with MCP); 2026-11-18 (Agent Skills, Claude Code sandboxing)
+**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system); 2026-11-03 (Demystifying evals for AI agents); 2026-11-04 (Code execution with MCP); 2026-11-18 (Agent Skills, Claude Code sandboxing); 2026-11-19 (Advanced tool use)
 **Related:** [Core concepts](../concepts/core-concepts.md)
 
 ## Effective context engineering for AI agents (Sep 2025)
@@ -73,6 +73,13 @@
 - Web version: sessions run in cloud sandboxes with git credentials kept outside. A proxy checks a scoped credential and the request (e.g. push only to the configured branch) and then attaches the real token.
 - Reported result: 84% fewer permission prompts in internal use (self-reported, not independently verified). The runtime is open source and can sandbox arbitrary agents and MCP servers; in Claude Code it is `/sandbox`.
 
+## Advanced tool use (Nov 2025)
+- Problem: tool definitions eat context (their five-server example: 58 tools, about 55K tokens; they saw 134K internally), similar tool names cause wrong picks, every intermediate result lands in context, and JSON Schema says what is valid, not how a tool is normally used. Three beta features (header `advanced-tool-use-2025-11-20`), each aimed at one bottleneck.
+- Tool Search: mark tools `defer_loading: true`; Claude sees only a search tool plus non-deferred tools and pulls full definitions on demand (regex, BM25 or custom embedding search). Keeps the prompt cacheable. Reported: about 77K to 8.7K tokens of upfront context; MCP eval accuracy Opus 4 49% to 74%, Opus 4.5 79.5% to 88.1%. Use when definitions exceed about 10K tokens, you have 10+ tools or several MCP servers; skip for small or always-used toolsets. Costs a search step of latency. Keep the 3-5 most-used tools loaded, write precise names and descriptions, and tell the model in the system prompt what capability areas exist. (The post's "85% reduction" headline does not quite match its own 77K to 8.7K figures, which is closer to 89%.)
+- Programmatic tool calling: Claude writes Python in a sandbox that calls your tools (`allowed_callers`), aggregates, and returns only the result. Example: 2,000+ expense lines (about 200KB) reduced to the 2-3 over-budget people (about 1KB). Reported: average tokens 43.6K to 27.3K on research tasks, fewer round trips, small accuracy gains (46.5% to 51.2% on GIA). Best for big datasets, 3+ dependent calls, parallel fan-out; skip for single calls or when the model must reason over every intermediate result. Document return formats (the model writes parsing code) and prefer idempotent, parallel-safe tools. This is the API-level version of the code-execution-with-MCP pattern above.
+- Tool use examples: `input_examples` on a tool show conventions the schema cannot (date formats, ID patterns, when optional nested fields apply). Reported: complex-parameter accuracy 72% to 90% in internal tests. Use realistic values, 1-5 examples, spread from minimal to full calls; skip for obvious tools. Costs tokens on every request.
+- Advice: start with your biggest bottleneck (context bloat -> search; large intermediate results -> programmatic calls; parameter errors -> examples). All numbers are Anthropic's own, not independently verified.
+
 ## Links
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - https://www.anthropic.com/engineering/building-effective-agents
@@ -83,4 +90,5 @@
 - https://www.anthropic.com/engineering/code-execution-with-mcp
 - https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
 - https://www.anthropic.com/engineering/claude-code-sandboxing
+- https://www.anthropic.com/engineering/advanced-tool-use
 - https://www.anthropic.com/engineering
