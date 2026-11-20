@@ -2,7 +2,7 @@
 
 **Who:** The team behind Claude, Claude Code and the Agent SDK, publishing how they build agents internally.
 **Why credible:** Primary source from a frontier lab, based on production systems.
-**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system); 2026-11-03 (Demystifying evals for AI agents); 2026-11-04 (Code execution with MCP); 2026-11-18 (Agent Skills, Claude Code sandboxing); 2026-11-19 (Advanced tool use)
+**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system); 2026-11-03 (Demystifying evals for AI agents); 2026-11-04 (Code execution with MCP); 2026-11-18 (Agent Skills, Claude Code sandboxing); 2026-11-19 (Advanced tool use); 2026-11-20 (Building a C compiler with parallel Claudes)
 **Related:** [Core concepts](../concepts/core-concepts.md)
 
 ## Effective context engineering for AI agents (Sep 2025)
@@ -80,6 +80,16 @@
 - Tool use examples: `input_examples` on a tool show conventions the schema cannot (date formats, ID patterns, when optional nested fields apply). Reported: complex-parameter accuracy 72% to 90% in internal tests. Use realistic values, 1-5 examples, spread from minimal to full calls; skip for obvious tools. Costs tokens on every request.
 - Advice: start with your biggest bottleneck (context bloat -> search; large intermediate results -> programmatic calls; parameter errors -> examples). All numbers are Anthropic's own, not independently verified.
 
+## Building a C compiler with a team of parallel Claudes (Feb 2026, Nicholas Carlini)
+- Setup: a bash loop restarts Claude Code on a fixed prompt file whenever a session ends, inside a container. Several agents each run in their own container, clone a shared bare git repo and push back. No orchestrator and no channel beyond git.
+- Coordination: an agent claims a task by writing a lock file in `current_tasks/`; git sync makes a second claimant pick something else. Merge conflicts were frequent and the agents resolved them. Agents keep notes on failed approaches and the project leans on READMEs and progress files because each session starts cold.
+- The verifier is the bottleneck: with no human watching, the tests must be near-flawless or the agent optimizes for the wrong target. Tests came from existing compiler suites plus build and verify scripts for open-source packages; failure patterns became new tests; CI was added late to stop regressions.
+- Designing for model limits: keep terminal output to a few lines and send detail to log files with greppable error tags (context pollution); give a `--fast` mode that runs a deterministic random 1% or 10% sample, with samples differing per agent so the whole suite is still covered (time blindness).
+- Parallelism breaks on monolithic tasks: with many independent failing tests it was easy, but compiling the Linux kernel was one task and agents collided on the same bug. Fix: use GCC as a known-good oracle, compile most files with GCC and only a subset with the new compiler, so agents fix different bugs in different files; delta debugging found failures that only occur in combination.
+- Specialist agents handled deduplication, compiler performance, output efficiency, design critique and docs.
+- Reported outcome: about 2,000 sessions over roughly two weeks, around 2B input and 140M output tokens, just under $20,000; a ~100,000-line Rust compiler that builds Linux 6.9 on x86, ARM and RISC-V and passes about 99% of most test suites. Limits: needs GCC for 16-bit real-mode boot code, no own assembler or linker, less efficient output than unoptimized GCC, new features often broke old ones. Capability rose by model: Opus 4 barely worked, 4.5 passed suites but not real projects, 4.6 near the model's limit.
+- Author's caution: passing tests is not the same as done, and he is uneasy about shipping software nobody has personally verified. (Figures are Anthropic's own.)
+
 ## Links
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - https://www.anthropic.com/engineering/building-effective-agents
@@ -91,4 +101,5 @@
 - https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills
 - https://www.anthropic.com/engineering/claude-code-sandboxing
 - https://www.anthropic.com/engineering/advanced-tool-use
+- https://www.anthropic.com/engineering/building-c-compiler
 - https://www.anthropic.com/engineering

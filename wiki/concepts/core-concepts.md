@@ -67,6 +67,10 @@ Agents run the inner loop (investigate, implement, verify); humans own the bound
 ## RAG evaluation and agent building blocks
 Evaluate RAG by the failing pair among question, context and answer (six checks); start from synthetic questions per chunk, then segment real queries and prioritize clusters by volume and dissatisfaction, with specific feedback prompts. Source: [Jason Liu](../people/jason-liu.md). The classic agent frame is planning, memory and tool use, with finite context, weak long-horizon planning and brittle output parsing as the known limits. Source: [Lilian Weng](../people/lilian-weng.md).
 
+## Parallel autonomous agents
+- Anthropic's [C compiler experiment](../people/anthropic-engineering.md) ran many agents with no orchestrator, coordinating only through git lock files. Lesson: with unattended agents the verifier quality caps the result; design test output for the model (short, greppable, sampled `--fast` runs).
+- Parallelism needs independent subtasks. For a monolithic task, split it with a known-good oracle (compile most files with GCC, a few with the new compiler). Contrast with [Cognition's advice](../people/walden-yan.md) to avoid multi-agent setups when decisions are coupled.
+
 ## Open questions
 - Multi-agent vs single agent: Cognition (June 2025, no data) says default to one linear agent; Anthropic reports a multi-agent system beating one agent on breadth-first research. Both agree tightly coupled work (most coding) suits one agent.
 - Retrieval for coding agents: Jason Liu's blog index points to posts arguing grep and direct exploration beat embedding RAG, while his RAG-improvement posts assume embedding plus full-text retrieval. Different settings (code vs documents); not yet read.
