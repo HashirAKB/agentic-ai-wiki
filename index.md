@@ -30,7 +30,7 @@ Read this first. One line per page. Updated on every ingest.
 
 ## Tools radar
 - [Seen tools](radar/seen.md) - everything suggested so far
-- [Latest radar: 2026-11-07](radar/2026-11-07.md) - weekly scan of new Claude tools, plugins, skills, MCP
+- [Latest radar: 2026-11-21](radar/2026-11-21.md) - weekly scan of new Claude tools, plugins, skills, MCP
 
 ## Playbooks
 - [Playbooks and adoption status](playbooks/README.md) - how to use each adopted tool, with a first exercise

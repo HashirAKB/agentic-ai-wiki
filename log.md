@@ -46,3 +46,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-19] ingest | Anthropic: Advanced tool use (tool search, programmatic tool calling, tool use examples) (Andrew Ng skipped, still blocked)
 ## [2026-11-20] ingest | Anthropic: Building a C compiler with parallel Claudes (Andrew Ng skipped, still blocked)
 ## [2026-11-21] ingest | Anthropic: Claude Code auto mode (Andrew Ng skipped, still blocked)
+## [2026-11-21] radar | 9 items, top: External sandboxes for coding agents, Claude Fable 5.2, Code Mode easel/tasks/mcp add-json

@@ -32,3 +32,12 @@
 | datasette-agent 0.5a0 | https://simonwillison.net/2026/Nov/3/datasette-agent/ | 2026-11-07 | Watch |
 | ai.adeu/adeu (DOCX redlining MCP) | https://github.com/dealfluence/adeu | 2026-11-07 | Watch |
 | agency.extremely/agency | https://github.com/maxkxd/extremely-autonomous-agents | 2026-11-07 | Skip-for-now |
+| External sandboxes for coding agents | https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/ | 2026-11-21 | Try now |
+| Claude Fable 5.2 | https://www.anthropic.com/claude-fable-and-mythos-5-2 | 2026-11-21 | Try now |
+| Code Mode easel charts, /tasks, mcp add-json (2.1.326-2.1.330) | https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md | 2026-11-21 | Try now |
+| Self-hosted Managed Agents | https://platform.claude.com/docs/en/release-notes/overview | 2026-11-21 | Skip-for-now |
+| Linked billing (beta) | https://platform.claude.com/docs/en/release-notes/overview | 2026-11-21 | Watch |
+| Compliance API security posture / IP allowlist | https://platform.claude.com/docs/en/release-notes/overview | 2026-11-21 | Skip-for-now |
+| MCP hook onFailure block + auto mode on third-party clouds | https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md | 2026-11-21 | Watch |
+| ai.a1lane/a1lane | https://github.com/a1lane/a1lane-mcp | 2026-11-21 | Skip-for-now |
+| ai.a2uicatalog/docs | https://github.com/a2uicatalog/a2ui | 2026-11-21 | Watch |
