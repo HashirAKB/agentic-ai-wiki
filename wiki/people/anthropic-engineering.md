@@ -90,6 +90,16 @@
 - Reported outcome: about 2,000 sessions over roughly two weeks, around 2B input and 140M output tokens, just under $20,000; a ~100,000-line Rust compiler that builds Linux 6.9 on x86, ARM and RISC-V and passes about 99% of most test suites. Limits: needs GCC for 16-bit real-mode boot code, no own assembler or linker, less efficient output than unoptimized GCC, new features often broke old ones. Capability rose by model: Opus 4 barely worked, 4.5 passed suites but not real projects, 4.6 near the model's limit.
 - Author's caution: passing tests is not the same as done, and he is uneasy about shipping software nobody has personally verified. (Figures are Anthropic's own.)
 
+## Claude Code auto mode (2026, Anthropic Engineering)
+- Problem: users approve 93% of permission prompts, so approval fatigue makes manual review weak. Auto mode sits between manual approval and skipping permissions: a classifier decides instead.
+- Two layers: an input probe scans tool outputs (file reads, fetches, shell output) for injection and adds a warning; an output classifier (Sonnet 4.6) checks each action first with a fast single-token yes/no filter tuned to block, then chain-of-thought only on flagged actions.
+- Reasoning-blind by design: the classifier sees user messages and the agent's tool calls only, not the agent's prose or tool results, so the agent cannot talk its way past it and injected text has little route in.
+- Tiers: read-only tools and user allow rules pass (broad rules granting arbitrary code execution are dropped on entry); in-project file edits skip the classifier (reviewable in git); shell, web, external tools, subagent spawns and out-of-project writes go to the classifier. Default trust boundary is the current git repo.
+- Threat model, in tuned priority: overeager behavior and honest blast-radius mistakes first, then injection and a misaligned model. Blocked examples: escalating scope in a vague cleanup, hunting for other credentials after an auth error, guessing a target by similar name, posting data to a public gist, retrying a deploy with a verification-skip flag. Customizable slots: environment, block rules (20+ defaults), allow exceptions.
+- Measured (Anthropic's own): full pipeline 0.4% false positives on 10,000 real calls, but a 17% miss rate on 52 real overeager actions and 5.7% on synthetic exfiltration. Stage 1 alone: 8.5% false positives, 6.6% misses. Most misses come from treating a nearby approval as consent for the full blast radius.
+- Behavior on block: the denial and its reason go back to the agent to find a safer path; 3 consecutive or 20 total denials stop the session (headless: terminate). Subagents are checked at delegation (can deny) and at return (warn only).
+- Authors' caution: not a replacement for careful human review on high-stakes infrastructure; better than skipping permissions, possibly worse than careful manual review. Compare with the sandbox approach above, which enforces boundaries rather than judging actions.
+
 ## Links
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - https://www.anthropic.com/engineering/building-effective-agents
@@ -102,4 +112,5 @@
 - https://www.anthropic.com/engineering/claude-code-sandboxing
 - https://www.anthropic.com/engineering/advanced-tool-use
 - https://www.anthropic.com/engineering/building-c-compiler
+- https://www.anthropic.com/engineering/claude-code-auto-mode
 - https://www.anthropic.com/engineering
