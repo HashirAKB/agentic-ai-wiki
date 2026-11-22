@@ -71,6 +71,9 @@ Evaluate RAG by the failing pair among question, context and answer (six checks)
 - Anthropic's [C compiler experiment](../people/anthropic-engineering.md) ran many agents with no orchestrator, coordinating only through git lock files. Lesson: with unattended agents the verifier quality caps the result; design test output for the model (short, greppable, sampled `--fast` runs).
 - Parallelism needs independent subtasks. For a monolithic task, split it with a known-good oracle (compile most files with GCC, a few with the new compiler). Contrast with [Cognition's advice](../people/walden-yan.md) to avoid multi-agent setups when decisions are coupled.
 
+## Harness regressions and quality monitoring
+Agent quality can fall without any model change: Anthropic's [postmortems](../people/anthropic-engineering.md) trace a month of complaints to a lowered default effort, a context-trimming bug and a terseness prompt. Aggregate evals missed them; a broader eval set and line-by-line prompt ablations found them. Practices: evaluate every prompt or harness change per model on a broad suite, gate model-specific changes, roll out gradually, keep production quality evals running, and treat user-reported examples as signal. Links to [evals](../people/hamel-husain.md) (read traces, not just scores).
+
 ## Open questions
 - Multi-agent vs single agent: Cognition (June 2025, no data) says default to one linear agent; Anthropic reports a multi-agent system beating one agent on breadth-first research. Both agree tightly coupled work (most coding) suits one agent.
 - Retrieval for coding agents: Jason Liu's blog index points to posts arguing grep and direct exploration beat embedding RAG, while his RAG-improvement posts assume embedding plus full-text retrieval. Different settings (code vs documents); not yet read.

@@ -2,7 +2,7 @@
 
 **Who:** The team behind Claude, Claude Code and the Agent SDK, publishing how they build agents internally.
 **Why credible:** Primary source from a frontier lab, based on production systems.
-**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system); 2026-11-03 (Demystifying evals for AI agents); 2026-11-04 (Code execution with MCP); 2026-11-18 (Agent Skills, Claude Code sandboxing); 2026-11-19 (Advanced tool use); 2026-11-20 (Building a C compiler with parallel Claudes)
+**Ingested:** 2026-10-30 (context engineering via summaries); 2026-10-30 (Building effective agents, Writing tools for agents read from primary pages); 2026-11-01 (Effective harnesses for long-running agents); 2026-11-02 (multi-agent research system); 2026-11-03 (Demystifying evals for AI agents); 2026-11-04 (Code execution with MCP); 2026-11-18 (Agent Skills, Claude Code sandboxing); 2026-11-19 (Advanced tool use); 2026-11-20 (Building a C compiler with parallel Claudes); 2026-11-21 (auto mode); 2026-11-22 (two quality postmortems)
 **Related:** [Core concepts](../concepts/core-concepts.md)
 
 ## Effective context engineering for AI agents (Sep 2025)
@@ -100,6 +100,14 @@
 - Behavior on block: the denial and its reason go back to the agent to find a safer path; 3 consecutive or 20 total denials stop the session (headless: terminate). Subagents are checked at delegation (can deny) and at return (warn only).
 - Authors' caution: not a replacement for careful human review on high-stakes infrastructure; better than skipping permissions, possibly worse than careful manual review. Compare with the sandbox approach above, which enforces boundaries rather than judging actions.
 
+## Quality postmortems: Aug-Sep 2025 infrastructure bugs and the Mar-Apr 2026 Claude Code changes
+- **2025 post** ([three recent issues](https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues)): three overlapping infrastructure bugs. (1) Context-window routing sent some Sonnet 4 requests to servers meant for the 1M-context window; at the worst hour 16% of requests were affected and "sticky" routing kept unlucky users on the bad servers (about 30% of Claude Code users had at least one misrouted message). (2) A TPU misconfiguration occasionally boosted unlikely tokens, producing stray Thai or Chinese characters or syntax errors. (3) An approximate top-k bug in the XLA:TPU compiler, previously masked by a workaround, surfaced after a sampling rewrite and only on some batch sizes. Anthropic states it does not lower quality because of demand or load.
+- **2026 post** ([April 23 update](https://www.anthropic.com/engineering/april-23-postmortem)): three product-layer changes, not model changes, and the API was unaffected. (1) Default reasoning effort lowered from high to medium on March 4 to cut perceived latency, reverted April 7 as the wrong tradeoff. (2) A cache-clearing change meant to drop old thinking once after an hour idle ran on every turn (March 26 to April 10), so the agent seemed forgetful and repetitive and caused cache misses. (3) A verbosity-limiting prompt (25 words between tool calls, 100 in the final answer) ran April 16-20; ablations showed about a 3% eval drop.
+- Why it was missed: internal evals showed the effort cut as a small intelligence loss for a big latency win; the caching bug hid behind an internal-only experiment and a display change, passed unit, end-to-end and dogfood checks, and took over a week to root-cause; the prompt change passed weeks of testing on a narrow eval set and only showed up on a broader one. In 2025, benchmarks, safety evals and canaries missed it, and Claude's habit of recovering from isolated mistakes masked the damage.
+- How it was found: user reports via feedback commands and reproducible public examples, then line-by-line prompt ablations. Back-testing their code-review tool with a newer model on the offending PRs found the caching bug when given full repository context.
+- Lessons stated: run continuous quality evals on production, not only pre-release; evaluate every system-prompt change per model on a broad set and ablate line by line; gate model-specific changes to that model; use soak periods and gradual rollouts for anything that trades intelligence for speed; have staff use the exact public build.
+- Takeaway for agent builders: quality regressions often come from harness changes (effort defaults, context trimming, prompt edits), not weights, and aggregate evals can miss them. (Both posts are Anthropic's own account.)
+
 ## Links
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - https://www.anthropic.com/engineering/building-effective-agents
@@ -113,4 +121,6 @@
 - https://www.anthropic.com/engineering/advanced-tool-use
 - https://www.anthropic.com/engineering/building-c-compiler
 - https://www.anthropic.com/engineering/claude-code-auto-mode
+- https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues
+- https://www.anthropic.com/engineering/april-23-postmortem
 - https://www.anthropic.com/engineering
