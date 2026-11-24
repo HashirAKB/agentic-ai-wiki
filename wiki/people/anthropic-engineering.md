@@ -108,6 +108,15 @@
 - Lessons stated: run continuous quality evals on production, not only pre-release; evaluate every system-prompt change per model on a broad set and ablate line by line; gate model-specific changes to that model; use soak periods and gradual rollouts for anything that trades intelligence for speed; have staff use the exact public build.
 - Takeaway for agent builders: quality regressions often come from harness changes (effort defaults, context trimming, prompt edits), not weights, and aggregate evals can miss them. (Both posts are Anthropic's own account.)
 
+## Scaling Managed Agents: decoupling the brain from the hands (Apr 2026)
+- Problem: the first design ran session, harness and sandbox in one container, making it a "pet". A dead container lost the session, debugging needed shells inside containers holding user data, and the harness could not reach resources in customers' private networks.
+- Fix: split into brain (Claude plus harness loop), hands (sandboxes and tools) and session (append-only event log). Each sits behind a small interface (`execute(name, input) -> string`, `provision`, `wake`, `getSession`, `emitEvent`, `getEvents`), so any part can fail or be swapped independently.
+- Containers become cattle: a failed one is reported to Claude as a tool error and it can retry on a fresh one. A crashed harness is replaced by one that reloads the log and resumes.
+- Security made structural: credentials are unreachable from the sandbox. Git tokens are used only at setup; MCP OAuth tokens live in a vault behind a proxy. This avoids betting on the model resisting prompt injection.
+- Context: compaction, trimming and memory files are irreversible, so the session log is a durable context object outside the window. The brain can reread or rewind, and the harness decides what enters the window.
+- Reported effect of provisioning containers only when needed: p50 time-to-first-token down about 60%, p95 over 90%.
+- Lesson: harness assumptions go stale. Context resets that helped Sonnet 4.5 were unnecessary with Opus 4.5.
+
 ## Links
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - https://www.anthropic.com/engineering/building-effective-agents
@@ -123,4 +132,5 @@
 - https://www.anthropic.com/engineering/claude-code-auto-mode
 - https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues
 - https://www.anthropic.com/engineering/april-23-postmortem
+- https://www.anthropic.com/engineering/managed-agents
 - https://www.anthropic.com/engineering

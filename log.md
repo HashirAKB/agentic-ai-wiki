@@ -49,3 +49,4 @@ Append-only. Newest at the bottom.
 ## [2026-11-21] radar | 9 items, top: External sandboxes for coding agents, Claude Fable 5.2, Code Mode easel/tasks/mcp add-json
 ## [2026-11-22] ingest | Anthropic: quality postmortems (Aug-Sep 2025 infrastructure bugs; Mar-Apr 2026 Claude Code changes) (Andrew Ng skipped, still blocked)
 ## [2026-11-22] lint | Weekly pass: all relative links resolve (CLAUDE.md's example link is illustrative); older radar pages (10-30, 10-31, 11-07) are only reachable via the radar folder, acceptable as archive; no contradictions found; new concept section added for harness regressions
+## [2026-11-24] ingest | Anthropic: Scaling Managed Agents (brain/hands/session decoupling) (Andrew Ng skipped, still blocked)

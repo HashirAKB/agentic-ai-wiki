@@ -74,6 +74,9 @@ Evaluate RAG by the failing pair among question, context and answer (six checks)
 ## Harness regressions and quality monitoring
 Agent quality can fall without any model change: Anthropic's [postmortems](../people/anthropic-engineering.md) trace a month of complaints to a lowered default effort, a context-trimming bug and a terseness prompt. Aggregate evals missed them; a broader eval set and line-by-line prompt ablations found them. Practices: evaluate every prompt or harness change per model on a broad suite, gate model-specific changes, roll out gradually, keep production quality evals running, and treat user-reported examples as signal. Links to [evals](../people/hamel-husain.md) (read traces, not just scores).
 
+## Decoupled agent infrastructure
+Anthropic's [Managed Agents design](../people/anthropic-engineering.md) separates the brain (model plus harness), the hands (sandboxes and tools) and the session (durable event log) behind stable interfaces. Consequences: disposable compute, resumable harnesses, credentials kept outside the sandbox by construction, and context stored reversibly outside the window. Complements [sandboxing](../people/anthropic-engineering.md) and the long-running harness patterns above.
+
 ## Open questions
 - Multi-agent vs single agent: Cognition (June 2025, no data) says default to one linear agent; Anthropic reports a multi-agent system beating one agent on breadth-first research. Both agree tightly coupled work (most coding) suits one agent.
 - Retrieval for coding agents: Jason Liu's blog index points to posts arguing grep and direct exploration beat embedding RAG, while his RAG-improvement posts assume embedding plus full-text retrieval. Different settings (code vs documents); not yet read.
