@@ -117,6 +117,17 @@
 - Reported effect of provisioning containers only when needed: p50 time-to-first-token down about 60%, p95 over 90%.
 - Lesson: harness assumptions go stale. Context resets that helped Sonnet 4.5 were unnecessary with Opus 4.5.
 
+## The components of agent memory (2026)
+- Scope: memory means knowledge Claude gains from experience and keeps between sessions. Weight changes, in-context learning and compaction are excluded.
+- Hierarchy, bottom to top: transcripts (searchable raw log), memory notes (salient observations written during work), representations (derived wikis of linked pages), injected context (loaded every session, must stay small because a wrong note spreads everywhere), and "dreaming" (offline review of transcripts and notes to fix errors, build representations and promote material).
+- Treat memory as a prediction that a pattern will recur. Describe what memory is for rather than rigid write rules: a "record only failures" rule cut the memory gain for stronger models (0.234 for Opus 5). Weaker models need explicit steering: telling Sonnet 4.6 to read memory first and test its theories nearly doubled its score.
+- Lean injected layer: Claude Code loads only the first 200 lines or 25 KB of its memory index, which acts as a map to deeper files.
+- One writer per page: with a shared file, agents overwrote each other (72% of 57 contract facts kept); one agent per contract kept 100%.
+- Retrieval on a ~350,000-file corpus: search alone 53%, wiki alone 48%, wiki plus search 61% and about 20,000 fewer tokens per question. Wikis help most on synthesis across documents, not single-document lookups.
+- Dreaming: more consolidation sessions (2 to 128) raised wiki-only accuracy from 13% to 48%. It also caught a wrong note in a game run that otherwise blocked progress. Failure modes: wikis bigger than the source corpus and orphan pages with no links; later passes repaired links and added an index.
+- Memory gain measured on a database task: roughly +0.2 to +0.3 mean reward for recent models, almost none for Sonnet 4.6 until instructions were refined.
+- Source is Anthropic's own account; benchmarks are theirs.
+
 ## Links
 - https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 - https://www.anthropic.com/engineering/building-effective-agents
@@ -133,4 +144,5 @@
 - https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues
 - https://www.anthropic.com/engineering/april-23-postmortem
 - https://www.anthropic.com/engineering/managed-agents
+- https://www.anthropic.com/research/components-of-agent-memory
 - https://www.anthropic.com/engineering

@@ -77,6 +77,9 @@ Agent quality can fall without any model change: Anthropic's [postmortems](../pe
 ## Decoupled agent infrastructure
 Anthropic's [Managed Agents design](../people/anthropic-engineering.md) separates the brain (model plus harness), the hands (sandboxes and tools) and the session (durable event log) behind stable interfaces. Consequences: disposable compute, resumable harnesses, credentials kept outside the sandbox by construction, and context stored reversibly outside the window. Complements [sandboxing](../people/anthropic-engineering.md) and the long-running harness patterns above.
 
+## Agent memory
+Memory is a hierarchy: transcripts, notes, derived wiki representations, a small always-loaded index, and offline "dreaming" consolidation. Keep the injected layer lean, give each writer its own file, describe memory's purpose rather than rigid rules for strong models, and maintain wikis (links, index, error correction) or they bloat. Wiki plus search beat either alone. This is the same pattern as this wiki. See [Anthropic Engineering](../people/anthropic-engineering.md).
+
 ## Open questions
 - Multi-agent vs single agent: Cognition (June 2025, no data) says default to one linear agent; Anthropic reports a multi-agent system beating one agent on breadth-first research. Both agree tightly coupled work (most coding) suits one agent.
 - Retrieval for coding agents: Jason Liu's blog index points to posts arguing grep and direct exploration beat embedding RAG, while his RAG-improvement posts assume embedding plus full-text retrieval. Different settings (code vs documents); not yet read.

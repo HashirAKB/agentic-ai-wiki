@@ -35,3 +35,7 @@ Practice: every few weeks run `/doctor` and `/memory`, remove rules the model ca
 Suggested wording: "Monthly, offer to audit CLAUDE.md, saved preferences and installed skills for stale or inferable entries, and propose removals with a test task."
 
 ## Pending
+
+### P-2026-11-25: Memory notes: purpose over rules, one writer per file
+- Source: [Anthropic, components of agent memory](https://www.anthropic.com/research/components-of-agent-memory)
+- Suggested wording: "When saving memory notes, keep the always-loaded index short and link to detail files. Describe why a note matters rather than following rigid write rules, verify a note against its source before promoting it, and give parallel agents separate files."
